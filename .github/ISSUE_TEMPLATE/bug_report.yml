@@ -52,11 +52,5 @@ body:
       options:
         - label: I have searched the existing issues and this is not a duplicate.
           required: true
-        - label: I am using `GEMINI_API_KEY`
-          required: true
-        - label: I am using `OPENAI_API_KEY`
-          required: true
-        - label: I am using `OPENROUTER_API_KEY`
-          required: true
-        - label: I am using `CUSTOM_API_URL`
+        - label: I have at least one API key configured (GEMINI_API_KEY, XAI_API_KEY, OPENROUTER_API_KEY, or CUSTOM_API_URL)
           required: true

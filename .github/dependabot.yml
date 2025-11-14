@@ -1,0 +1,52 @@
+version: 2
+updates:
+  # Python dependencies
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "guidedways"
+    labels:
+      - "dependencies"
+      - "python"
+    # Disable all notifications (no emails, no Slack, etc.)
+    # PRs will be created but no notifications sent
+    groups:
+      # Group all patch updates together
+      patch-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+      # Group all minor updates together
+      minor-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+    # Don't auto-rebase PRs
+    rebase-strategy: "disabled"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "guidedways"
+    labels:
+      - "dependencies"
+      - "github-actions"
+    # Disable all notifications
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    rebase-strategy: "disabled"
