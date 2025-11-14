@@ -1,7 +1,112 @@
 {
   "permissions": {
-    "allow": [
-    ],
+    "allow": [],
     "deny": []
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__filesystem-with-morph__write_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__filesystem-with-morph__edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/post-tool-use.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/post-tool-use.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__filesystem-with-morph__write_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/post-tool-use.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__filesystem-with-morph__edit_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/post-tool-use.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/post-tool-use.sh"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/user-prompt-submit.sh"
+          }
+        ]
+      }
+    ]
   }
 }

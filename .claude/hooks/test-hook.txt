@@ -1,0 +1,2 @@
+This is a test file to verify hooks are working.
+If you see hook messages in the output, the hooks are configured correctly!
