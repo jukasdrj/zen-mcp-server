@@ -231,7 +231,66 @@
       "supports_images": true,
       "supports_temperature": true,
       "max_image_size_mb": 20.0,
-      "use_openai_response_api": true
+      "use_openai_response_api": true,
+      "allow_code_generation": true
+    },
+    {
+      "model_name": "gpt-image-1",
+      "friendly_name": "OpenAI (GPT Image 1)",
+      "aliases": [
+        "gptimage",
+        "gpt-image",
+        "dalle-replacement"
+      ],
+      "intelligence_score": 8,
+      "description": "GPT Image 1 - Image generation model replacing DALL-E in the API",
+      "context_window": 8192,
+      "max_output_tokens": 1024,
+      "supports_extended_thinking": false,
+      "supports_system_prompts": true,
+      "supports_streaming": false,
+      "supports_function_calling": false,
+      "supports_json_mode": true,
+      "supports_images": false,
+      "supports_temperature": true
+    },
+    {
+      "model_name": "gpt-4o-transcribe",
+      "friendly_name": "OpenAI (GPT-4o Transcribe)",
+      "aliases": [
+        "transcribe",
+        "gpt4o-transcribe"
+      ],
+      "intelligence_score": 9,
+      "description": "GPT-4o Transcribe - Speech-to-text transcription model",
+      "context_window": 25000,
+      "max_output_tokens": 4096,
+      "supports_extended_thinking": false,
+      "supports_system_prompts": false,
+      "supports_streaming": true,
+      "supports_function_calling": false,
+      "supports_json_mode": true,
+      "supports_images": false,
+      "supports_temperature": false
+    },
+    {
+      "model_name": "gpt-4o-mini-tts",
+      "friendly_name": "OpenAI (GPT-4o Mini TTS)",
+      "aliases": [
+        "tts",
+        "gpt4o-tts"
+      ],
+      "intelligence_score": 7,
+      "description": "GPT-4o Mini TTS - Text-to-speech synthesis model",
+      "context_window": 4096,
+      "max_output_tokens": 4096,
+      "supports_extended_thinking": false,
+      "supports_system_prompts": false,
+      "supports_streaming": true,
+      "supports_function_calling": false,
+      "supports_json_mode": false,
+      "supports_images": false,
+      "supports_temperature": false
     }
   ]
 }
