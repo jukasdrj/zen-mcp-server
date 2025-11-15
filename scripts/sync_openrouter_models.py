@@ -33,7 +33,6 @@ import logging
 import os
 import sys
 import urllib.request
-from pathlib import Path
 
 # Setup logging
 logging.basicConfig(
@@ -101,6 +100,7 @@ def estimate_intelligence_score(api_model: dict) -> int:
 
     # Reward recent models (created in last 6 months)
     import time
+
     six_months_ago = time.time() - (6 * 30 * 24 * 3600)
     if created > six_months_ago:
         score += 2
@@ -203,7 +203,7 @@ def load_existing_config(config_path: str) -> dict:
         return {"_README": {}, "models_by_name": {}}
 
     try:
-        with open(config_path, "r") as f:
+        with open(config_path) as f:
             config = json.load(f)
 
         models_by_name = {}
@@ -276,9 +276,9 @@ def should_include_model(model_id: str, api_model: dict) -> bool:
     # Exclude providers available via native APIs (already in openai_models.json, gemini_models.json, xai_models.json)
     # NOTE: X.AI kept here despite having native API because we want Grok code specialist variants
     excluded_providers = {
-        "openai",      # Use native OpenAI API instead
-        "google",      # Use native Gemini API instead
-        "anthropic",   # Use native Claude via Anthropic API instead
+        "openai",  # Use native OpenAI API instead
+        "google",  # Use native Gemini API instead
+        "anthropic",  # Use native Claude via Anthropic API instead
         # "x-ai",        # KEEP: Grok-4, Grok Code specialists are valuable
         "perplexity",  # Reasoning/search models - less priority
     }
@@ -290,34 +290,30 @@ def should_include_model(model_id: str, api_model: dict) -> bool:
     # Include major open and specialized model providers
     preferred_providers = {
         # OpenRouter frontier models (bleeding edge)
-        "openrouter",     # OpenRouter-authored frontier models
-
+        "openrouter",  # OpenRouter-authored frontier models
         # Frontier reasoning & specialized
-        "x-ai",           # X.AI - Grok models (reasoning + code specialists)
-        "minimax",        # MiniMax - 1M+ context frontier model
-
+        "x-ai",  # X.AI - Grok models (reasoning + code specialists)
+        "minimax",  # MiniMax - 1M+ context frontier model
         # Open source / alternatives
-        "mistralai",      # Mistral - major open alternative
-        "meta-llama",     # Meta's Llama - largest open model (405B)
-        "deepseek",       # DeepSeek - advanced reasoning
-
+        "mistralai",  # Mistral - major open alternative
+        "meta-llama",  # Meta's Llama - largest open model (405B)
+        "deepseek",  # DeepSeek - advanced reasoning
         # Chinese LLMs (very capable)
-        "qwen",          # Alibaba's Qwen - very capable, excellent code variants
-        "z-ai",          # Z-AI - GLM models (Tsinghua)
-        "thudm",         # Tsinghua - GLM research models
-        "baidu",         # Baidu's models
-        "tencent",       # Tencent - major Chinese tech
-        "bytedance",     # ByteDance/Douyin - advanced models
-
+        "qwen",  # Alibaba's Qwen - very capable, excellent code variants
+        "z-ai",  # Z-AI - GLM models (Tsinghua)
+        "thudm",  # Tsinghua - GLM research models
+        "baidu",  # Baidu's models
+        "tencent",  # Tencent - major Chinese tech
+        "bytedance",  # ByteDance/Douyin - advanced models
         # Research & specialized
-        "cohere",        # Cohere - specialized NLP
-        "allenai",       # Allen AI - research models
-        "ibm-granite",   # IBM's enterprise models
-        "microsoft",     # Microsoft research models
-        "moonshotai",    # Moonshot - advanced reasoning
+        "cohere",  # Cohere - specialized NLP
+        "allenai",  # Allen AI - research models
+        "ibm-granite",  # IBM's enterprise models
+        "microsoft",  # Microsoft research models
+        "moonshotai",  # Moonshot - advanced reasoning
         "nousresearch",  # Nous Research - specialized
-        "liquid",        # Liquid AI - efficient models
-        "nvidia",        # NVIDIA models
+        "liquid",  # Liquid AI - efficient models
+        "nvidia",  # NVIDIA models
     }
 
     if provider in preferred_providers:
@@ -332,9 +328,7 @@ def should_include_model(model_id: str, api_model: dict) -> bool:
     return False
 
 
-def merge_model_configs(
-    api_models: dict, existing_config: dict, keep_aliases: bool = False
-) -> list[dict]:
+def merge_model_configs(api_models: dict, existing_config: dict, keep_aliases: bool = False) -> list[dict]:
     """Merge API models with curated config data.
 
     Args:
@@ -501,9 +495,7 @@ def main():
         existing_config = load_existing_config(args.output)
 
         # Merge API data with curated config
-        merged_models = merge_model_configs(
-            api_models, existing_config, keep_aliases=args.keep_aliases
-        )
+        merged_models = merge_model_configs(api_models, existing_config, keep_aliases=args.keep_aliases)
 
         # Add frontier model overrides
         if args.include_frontier:

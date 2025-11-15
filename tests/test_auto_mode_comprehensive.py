@@ -80,9 +80,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-2.5-pro",  # Pro for deep thinking
-                    "FAST_RESPONSE": "gemini-2.5-flash",  # Flash for speed
-                    "BALANCED": "gemini-2.5-flash",  # Flash as balanced
+                    "EXTENDED_REASONING": "gemini-2.5-pro-computer-use",  # Pro with thinking (both pro models have same score, -computer-use comes first alphabetically)
+                    "FAST_RESPONSE": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
+                    "BALANCED": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
                 },
             ),
             # Only OpenAI API available
@@ -108,9 +108,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "grok-4",  # GROK-4 for reasoning (now preferred)
-                    "FAST_RESPONSE": "grok-3-fast",  # GROK-3-fast for speed
-                    "BALANCED": "grok-4",  # GROK-4 as balanced (now preferred)
+                    "EXTENDED_REASONING": "grok-4",  # Grok-4 for reasoning
+                    "FAST_RESPONSE": "grok-4",  # Grok-4 also used for fast response (no grok-3 models exist)
+                    "BALANCED": "grok-4",  # Grok-4 as balanced
                 },
             ),
             # Both Gemini and OpenAI available - Google comes first in priority
@@ -122,9 +122,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-2.5-pro",  # Gemini comes first in priority
-                    "FAST_RESPONSE": "gemini-2.5-flash",  # Prefer flash for speed
-                    "BALANCED": "gemini-2.5-flash",  # Prefer flash for balanced
+                    "EXTENDED_REASONING": "gemini-2.5-pro-computer-use",  # Gemini Pro with thinking (both pro models have same score, -computer-use comes first alphabetically)
+                    "FAST_RESPONSE": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
+                    "BALANCED": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
                 },
             ),
             # All native APIs available - Google still comes first
@@ -136,9 +136,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-2.5-pro",  # Gemini comes first in priority
-                    "FAST_RESPONSE": "gemini-2.5-flash",  # Prefer flash for speed
-                    "BALANCED": "gemini-2.5-flash",  # Prefer flash for balanced
+                    "EXTENDED_REASONING": "gemini-2.5-pro-computer-use",  # Gemini Pro with thinking (both pro models have same score, -computer-use comes first alphabetically)
+                    "FAST_RESPONSE": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
+                    "BALANCED": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
                 },
             ),
         ],

@@ -32,10 +32,11 @@
         "grok4",
         "grok-4"
       ],
-      "intelligence_score": 18,
-      "description": "GROK-4 (256K context) - Most intelligent model with native tool use and real-time search",
+      "intelligence_score": 100,
+      "description": "Grok 4 (256K context) - Most intelligent model with native tool use, real-time search, and advanced reasoning",
       "context_window": 256000,
       "max_output_tokens": 256000,
+      "max_thinking_tokens": 128000,
       "supports_extended_thinking": true,
       "supports_system_prompts": true,
       "supports_streaming": true,
@@ -43,6 +44,7 @@
       "supports_json_mode": true,
       "supports_images": true,
       "supports_temperature": true,
+      "allow_code_generation": true,
       "max_image_size_mb": 20.0
     },
     {
@@ -53,10 +55,11 @@
         "grok-4-heavy",
         "grokheavy"
       ],
-      "intelligence_score": 19,
-      "description": "GROK-4 Heavy (256K context) - Most powerful version of Grok 4 with advanced capabilities",
+      "intelligence_score": 100,
+      "description": "Grok 4 Heavy (256K context) - Most powerful version of Grok 4 with higher fidelity responses and improved memory consistency",
       "context_window": 256000,
       "max_output_tokens": 256000,
+      "max_thinking_tokens": 128000,
       "supports_extended_thinking": true,
       "supports_system_prompts": true,
       "supports_streaming": true,
@@ -64,6 +67,7 @@
       "supports_json_mode": true,
       "supports_images": true,
       "supports_temperature": true,
+      "allow_code_generation": true,
       "max_image_size_mb": 20.0
     },
     {
@@ -74,10 +78,11 @@
         "grok4-fast",
         "grok-4-fast"
       ],
-      "intelligence_score": 17,
-      "description": "GROK-4 Fast Reasoning (2M context) - Ultra-fast with reasoning support",
+      "intelligence_score": 96,
+      "description": "Grok 4 Fast Reasoning (2M context) - Cost-efficient reasoning model with 40% fewer thinking tokens, web and X search capabilities",
       "context_window": 2000000,
       "max_output_tokens": 2000000,
+      "max_thinking_tokens": 100000,
       "supports_extended_thinking": true,
       "supports_system_prompts": true,
       "supports_streaming": true,
@@ -85,6 +90,7 @@
       "supports_json_mode": true,
       "supports_images": true,
       "supports_temperature": true,
+      "allow_code_generation": true,
       "max_image_size_mb": 20.0
     },
     {
@@ -95,17 +101,19 @@
         "grok-code",
         "grokcode1"
       ],
-      "intelligence_score": 17,
-      "description": "GROK Code Fast 1 (2M context) - Specialized for agentic coding with reasoning",
+      "intelligence_score": 95,
+      "description": "Grok Code Fast 1 (2M context) - Specialized for agentic coding with reasoning capabilities",
       "context_window": 2000000,
       "max_output_tokens": 2000000,
+      "max_thinking_tokens": 100000,
       "supports_extended_thinking": true,
       "supports_system_prompts": true,
       "supports_streaming": true,
       "supports_function_calling": true,
       "supports_json_mode": true,
       "supports_images": false,
-      "supports_temperature": true
+      "supports_temperature": true,
+      "allow_code_generation": true
     }
   ]
 }
