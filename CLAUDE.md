@@ -1,6 +1,30 @@
-# Claude Development Guide for Zen MCP Server
+# Zen MCP Server - Claude Code Guide
 
-This file contains essential commands and workflows for developing and maintaining the Zen MCP Server when working with Claude. Use these instructions to efficiently run quality checks, manage the server, check logs, and run tests.
+**Version:** 9.1.3 | **Tech Stack:** Python, MCP | **Updated:** November 18, 2025
+
+> **📋 For universal AI agent instructions, see [`AGENTS.md`](AGENTS.md)**
+> This file contains **Claude Code-specific** setup and development workflows.
+
+---
+
+## Shared Knowledge Base
+
+**This project references shared learnings across all projects.**
+
+**Knowledge Base Location:** `~/.claude/knowledge-base/`
+
+### Relevant Patterns
+
+**From other projects:**
+- [Zero Warnings Policy](~/.claude/knowledge-base/decisions/zero-warnings-policy.md) - Adapt for Python/Ruff linting
+- [API Orchestration](~/.claude/knowledge-base/architectures/api-orchestration.md) - MCP server is an orchestrator
+
+**Patterns this project could contribute:**
+- MCP server architecture patterns
+- Multi-model orchestration
+- Python async patterns
+
+---
 
 ## Quick Reference Commands
 
