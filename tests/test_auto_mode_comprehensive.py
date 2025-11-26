@@ -80,9 +80,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-2.5-pro-computer-use",  # Pro with thinking (both pro models have same score, -computer-use comes first alphabetically)
-                    "FAST_RESPONSE": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
-                    "BALANCED": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
+                    "EXTENDED_REASONING": "gemini-3-pro-preview",  # Gemini 3 Pro Preview for deep thinking
+                    "FAST_RESPONSE": "gemini-2.5-flash",  # Flash for speed
+                    "BALANCED": "gemini-2.5-flash",  # Flash as balanced
                 },
             ),
             # Only OpenAI API available
@@ -94,9 +94,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gpt-5-codex",  # GPT-5-Codex prioritized for coding tasks
-                    "FAST_RESPONSE": "gpt-5",  # Prefer gpt-5 for speed
-                    "BALANCED": "gpt-5",  # Prefer gpt-5 for balanced
+                    "EXTENDED_REASONING": "gpt-5.1-codex",  # GPT-5.1 Codex prioritized for coding tasks
+                    "FAST_RESPONSE": "gpt-5.1",  # Prefer gpt-5.1 for speed
+                    "BALANCED": "gpt-5.1",  # Prefer gpt-5.1 for balanced
                 },
             ),
             # Only X.AI API available
@@ -108,9 +108,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "grok-4-1-fast-non-reasoning",  # Grok 4.1 Fast Non-Reasoning for all categories
-                    "FAST_RESPONSE": "grok-4-1-fast-non-reasoning",  # Single model for all use cases
-                    "BALANCED": "grok-4-1-fast-non-reasoning",  # Most cost-effective model
+                    "EXTENDED_REASONING": "grok-4",  # GROK-4 for reasoning (now preferred)
+                    "FAST_RESPONSE": "grok-3-fast",  # GROK-3-fast for speed
+                    "BALANCED": "grok-4",  # GROK-4 as balanced (now preferred)
                 },
             ),
             # Both Gemini and OpenAI available - Google comes first in priority
@@ -122,9 +122,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-2.5-pro-computer-use",  # Gemini Pro with thinking (both pro models have same score, -computer-use comes first alphabetically)
-                    "FAST_RESPONSE": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
-                    "BALANCED": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
+                    "EXTENDED_REASONING": "gemini-3-pro-preview",  # Gemini 3 Pro Preview comes first in priority
+                    "FAST_RESPONSE": "gemini-2.5-flash",  # Prefer flash for speed
+                    "BALANCED": "gemini-2.5-flash",  # Prefer flash for balanced
                 },
             ),
             # All native APIs available - Google still comes first
@@ -136,9 +136,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-2.5-pro-computer-use",  # Gemini Pro with thinking (both pro models have same score, -computer-use comes first alphabetically)
-                    "FAST_RESPONSE": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
-                    "BALANCED": "gemini2flashlite",  # Alphabetically last flash model (2.0-flash-lite via alias)
+                    "EXTENDED_REASONING": "gemini-3-pro-preview",  # Gemini 3 Pro Preview comes first in priority
+                    "FAST_RESPONSE": "gemini-2.5-flash",  # Prefer flash for speed
+                    "BALANCED": "gemini-2.5-flash",  # Prefer flash for balanced
                 },
             ),
         ],
