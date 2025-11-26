@@ -35,8 +35,6 @@
         "grok-4-1",
         "grok4fast",
         "grokfast",
-        "grokcode",
-        "grok-code",
         "grok4heavy",
         "grokheavy",
         "grok-4-1-fast-non-reasoning-latest"
@@ -55,6 +53,31 @@
       "supports_temperature": true,
       "allow_code_generation": true,
       "max_image_size_mb": 20.0
+    },
+    {
+      "model_name": "grok-code-fast-1",
+      "friendly_name": "X.AI (Grok Code Fast 1)",
+      "aliases": [
+        "grokcode",
+        "grok-code",
+        "grokcodefast",
+        "code-fast",
+        "grok-code-1"
+      ],
+      "intelligence_score": 95,
+      "description": "Grok Code Fast 1 (256K context) - Specialized reasoning model for agentic coding. Excels at TypeScript, Python, Java, Rust, C++, and Go. 70.8% on SWE-Bench-Verified. $0.20/M input, $1.50/M output, $0.02/M cached input tokens.",
+      "context_window": 256000,
+      "max_output_tokens": 256000,
+      "max_thinking_tokens": 0,
+      "supports_extended_thinking": false,
+      "supports_system_prompts": true,
+      "supports_streaming": true,
+      "supports_function_calling": true,
+      "supports_json_mode": true,
+      "supports_images": false,
+      "supports_temperature": true,
+      "allow_code_generation": true,
+      "max_image_size_mb": 0
     }
   ]
 }
