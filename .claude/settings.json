@@ -10,7 +10,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
           }
         ]
       },
@@ -19,7 +19,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
           }
         ]
       },
@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
           }
         ]
       },
@@ -37,7 +37,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
           }
         ]
       },
@@ -46,7 +46,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
           }
         ]
       }
@@ -57,7 +57,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/post-tool-use.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/post-tool-use.sh"
           }
         ]
       },
@@ -66,7 +66,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/post-tool-use.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/post-tool-use.sh"
           }
         ]
       },
@@ -75,7 +75,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/post-tool-use.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/post-tool-use.sh"
           }
         ]
       },
@@ -84,7 +84,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/post-tool-use.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/post-tool-use.sh"
           }
         ]
       },
@@ -93,7 +93,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/post-tool-use.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/post-tool-use.sh"
           }
         ]
       }
@@ -103,7 +103,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks/user-prompt-submit.sh"
+            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/user-prompt-submit.sh"
           }
         ]
       }

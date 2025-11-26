@@ -13,7 +13,9 @@ SESSION_ID=$(echo "$INPUT" | jq -r '.session_id // "unknown"')
 CWD=$(echo "$INPUT" | jq -r '.cwd // "unknown"')
 
 # Log hook execution
-LOG_DIR="/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks"
+# Use git root to make paths portable
+REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || echo "$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)")
+LOG_DIR="$REPO_ROOT/.claude/hooks"
 mkdir -p "$LOG_DIR"
 echo "[$(date)] UserPromptSubmit: session=$SESSION_ID, cwd=$CWD" >> "$LOG_DIR/hook.log"
 

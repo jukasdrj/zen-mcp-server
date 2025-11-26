@@ -13,7 +13,9 @@ TOOL_NAME=$(echo "$INPUT" | jq -r '.tool_name // "unknown"')
 TOOL_INPUT=$(echo "$INPUT" | jq -r '.tool_input // "{}"')
 
 # Log hook execution (for debugging)
-LOG_DIR="/Users/justingardner/Downloads/xcode/zen-mcp-server/.claude/hooks"
+# Use git root to make paths portable
+REPO_ROOT=$(git rev-parse --show-toplevel 2>/dev/null || echo "$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)")
+LOG_DIR="$REPO_ROOT/.claude/hooks"
 mkdir -p "$LOG_DIR"
 echo "[$(date)] PreToolUse: $TOOL_NAME" >> "$LOG_DIR/hook.log"
 
