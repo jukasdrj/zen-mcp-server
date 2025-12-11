@@ -320,8 +320,8 @@ class TestAutoModeProviderSelection:
                 ("pro", ProviderType.GOOGLE, "gemini-3-pro-preview"),  # "pro" now resolves to gemini-3-pro-preview
                 ("mini", ProviderType.OPENAI, "gpt-5-mini"),  # "mini" now resolves to gpt-5-mini
                 ("o3mini", ProviderType.OPENAI, "o3-mini"),
-                ("grok", ProviderType.XAI, "grok-4"),
-                ("grokfast", ProviderType.XAI, "grok-3-fast"),
+                ("grok", ProviderType.XAI, "grok-4-1-fast-non-reasoning"),  # Now resolves to single model
+                ("grokfast", ProviderType.XAI, "grok-4-1-fast-non-reasoning"),  # Now resolves to single model
             ]
 
             for alias, expected_provider_type, expected_resolved_name in test_cases:

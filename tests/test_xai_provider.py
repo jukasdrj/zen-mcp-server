@@ -63,12 +63,12 @@ class TestXAIProvider:
         """Test model name resolution."""
         provider = XAIModelProvider("test-key")
 
-        # Test shorthand resolution - all resolve to grok-4-1-fast-non-reasoning
+        # Test shorthand resolution - most resolve to grok-4-1-fast-non-reasoning
         assert provider._resolve_model_name("grok") == "grok-4-1-fast-non-reasoning"
         assert provider._resolve_model_name("grok4") == "grok-4-1-fast-non-reasoning"
         assert provider._resolve_model_name("grok41") == "grok-4-1-fast-non-reasoning"
         assert provider._resolve_model_name("grokfast") == "grok-4-1-fast-non-reasoning"
-        assert provider._resolve_model_name("grokcode") == "grok-4-1-fast-non-reasoning"
+        assert provider._resolve_model_name("grokcode") == "grok-code-fast-1"  # Separate code model
         assert provider._resolve_model_name("grokheavy") == "grok-4-1-fast-non-reasoning"
 
         # Test full name passthrough
@@ -236,8 +236,8 @@ class TestXAIProvider:
         assert "grok" in grok_config.aliases
         assert "grok4" in grok_config.aliases
         assert "grokfast" in grok_config.aliases
-        assert "grokcode" in grok_config.aliases
         assert "grok-4-1-fast-non-reasoning-latest" in grok_config.aliases
+        # Note: grokcode is an alias for grok-code-fast-1, not grok-4-1-fast-non-reasoning
 
     @patch("providers.openai_compatible.OpenAI")
     def test_generate_content_resolves_alias_before_api_call(self, mock_openai_class):
@@ -331,7 +331,8 @@ class TestXAIProvider:
         call_kwargs = mock_client.chat.completions.create.call_args[1]
         assert call_kwargs["model"] == "grok-4-1-fast-non-reasoning"
 
-        # Test grokcode -> grok-4-1-fast-non-reasoning
+        # Test grokcode -> grok-code-fast-1 (separate code model)
+        mock_response.model = "grok-code-fast-1"
         provider.generate_content(prompt="Test", model_name="grokcode", temperature=0.7)
         call_kwargs = mock_client.chat.completions.create.call_args[1]
-        assert call_kwargs["model"] == "grok-4-1-fast-non-reasoning"
+        assert call_kwargs["model"] == "grok-code-fast-1"
