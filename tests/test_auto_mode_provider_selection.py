@@ -99,8 +99,8 @@ class TestAutoModeProviderSelection:
 
             # Should select appropriate OpenAI models based on new preference order
             assert extended_reasoning == "gpt-5.1-codex"  # GPT-5.1 Codex prioritized for extended reasoning
-            assert fast_response == "gpt-5.1"  # gpt-5.1 comes first in fast response preference
-            assert balanced == "gpt-5.1"  # gpt-5.1 for balanced
+            assert fast_response == "gpt-5.2"  # gpt-5.2 comes first in fast response preference
+            assert balanced == "gpt-5.2"  # gpt-5.2 for balanced
 
         finally:
             # Restore original environment
@@ -320,8 +320,8 @@ class TestAutoModeProviderSelection:
                 ("pro", ProviderType.GOOGLE, "gemini-3-pro-preview"),  # "pro" now resolves to gemini-3-pro-preview
                 ("mini", ProviderType.OPENAI, "gpt-5-mini"),  # "mini" now resolves to gpt-5-mini
                 ("o3mini", ProviderType.OPENAI, "o3-mini"),
-                ("grok", ProviderType.XAI, "grok-4-1-fast-non-reasoning"),  # Now resolves to single model
-                ("grokfast", ProviderType.XAI, "grok-4-1-fast-non-reasoning"),  # Now resolves to single model
+                ("grok", ProviderType.XAI, "grok-4"),
+                ("grok-4.1-fast-reasoning", ProviderType.XAI, "grok-4-1-fast-reasoning"),
             ]
 
             for alias, expected_provider_type, expected_resolved_name in test_cases:

@@ -4,7 +4,9 @@
   "additional_args": [
     "exec",
     "--json",
-    "--dangerously-bypass-approvals-and-sandbox"
+    "--dangerously-bypass-approvals-and-sandbox",
+    "--enable",
+    "web_search_request"
   ],
   "env": {},
   "roles": {
