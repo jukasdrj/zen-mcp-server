@@ -28,10 +28,23 @@
       "model_name": "grok-4-1-fast-non-reasoning",
       "friendly_name": "X.AI (Grok 4.1 Fast Non-Reasoning)",
       "aliases": [
+        "grok",
+        "grok4",
+        "grok-4",
+        "grok41",
+        "grok-4-1",
         "grok4fast",
         "grokfast",
+        "grok-4.1",
+        "grok-4.1-fast-reasoning",
+        "grok-4.1-fast-reasoning-latest",
+        "grok-4.1-fast",
         "grok4heavy",
         "grokheavy",
+        "heavy",
+        "grok-heavy",
+        "grok3",
+        "grok-3",
         "grok-4-1-fast-non-reasoning-latest"
       ],
       "intelligence_score": 100,
@@ -50,29 +63,6 @@
       "max_image_size_mb": 20.0
     },
     {
-      "model_name": "grok-4",
-      "friendly_name": "X.AI (Grok 4)",
-      "aliases": [
-        "grok",
-        "grok4",
-        "grok-4",
-        "grok41",
-        "grok-4-1"
-      ],
-      "intelligence_score": 15,
-      "description": "GROK-4 (256K context) - High-performance multimodal reasoning model with function calling",
-      "context_window": 256000,
-      "max_output_tokens": 256000,
-      "supports_extended_thinking": true,
-      "supports_system_prompts": true,
-      "supports_streaming": true,
-      "supports_function_calling": true,
-      "supports_json_mode": true,
-      "supports_images": true,
-      "supports_temperature": true,
-      "max_image_size_mb": 20.0
-    },
-    {
       "model_name": "grok-code-fast-1",
       "friendly_name": "X.AI (Grok Code Fast 1)",
       "aliases": [
@@ -80,7 +70,8 @@
         "grok-code",
         "grokcodefast",
         "code-fast",
-        "grok-code-1"
+        "grok-code-1",
+        "code"
       ],
       "intelligence_score": 100,
       "description": "Grok Code Fast 1 (256K context) - Specialized reasoning model for agentic coding. Excels at TypeScript, Python, Java, Rust, C++, and Go. 70.8% on SWE-Bench-Verified. $0.20/M input, $1.50/M output, $0.02/M cached input tokens.",
@@ -96,28 +87,6 @@
       "supports_temperature": true,
       "allow_code_generation": true,
       "max_image_size_mb": 0
-    },
-    {
-      "model_name": "grok-4-1-fast-reasoning",
-      "friendly_name": "X.AI (Grok 4.1 Fast Reasoning)",
-      "aliases": [
-        "grok-4.1",
-        "grok-4.1-fast-reasoning",
-        "grok-4.1-fast-reasoning-latest",
-        "grok-4.1-fast"
-      ],
-      "intelligence_score": 15,
-      "description": "GROK-4.1 Fast Reasoning (2M context) - High-performance multimodal reasoning model with function calling",
-      "context_window": 2000000,
-      "max_output_tokens": 2000000,
-      "supports_extended_thinking": true,
-      "supports_system_prompts": true,
-      "supports_streaming": true,
-      "supports_function_calling": true,
-      "supports_json_mode": true,
-      "supports_images": true,
-      "supports_temperature": true,
-      "max_image_size_mb": 20.0
     }
   ]
 }

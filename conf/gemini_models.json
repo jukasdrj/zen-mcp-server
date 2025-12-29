@@ -26,36 +26,18 @@
   },
   "models": [
     {
-      "model_name": "gemini-3-pro-preview",
-      "friendly_name": "Gemini Pro 3.0 Preview",
+      "model_name": "gemini-3-pro",
+      "friendly_name": "Gemini Pro 3.0",
       "aliases": [
         "pro",
-        "gemini3",
-        "gemini-pro"
-      ],
-      "intelligence_score": 18,
-      "description": "Deep reasoning + thinking mode (1M context) - Complex problems, architecture, deep analysis",
-      "context_window": 1048576,
-      "max_output_tokens": 65536,
-      "max_thinking_tokens": 32768,
-      "supports_extended_thinking": true,
-      "supports_system_prompts": true,
-      "supports_streaming": true,
-      "supports_function_calling": true,
-      "supports_json_mode": true,
-      "supports_images": true,
-      "supports_temperature": true,
-      "allow_code_generation": true,
-      "max_image_size_mb": 32.0
-    },
-    {
-      "model_name": "gemini-2.5-pro",
-      "friendly_name": "Gemini Pro 2.5",
-      "aliases": [
+        "gemini3pro",
+        "3pro",
+        "gemini-pro",
+        "pro25",
         "gemini-pro-2.5"
       ],
-      "intelligence_score": 18,
-      "description": "Older Model. 1M context - Complex problems, architecture, deep analysis",
+      "intelligence_score": 100,
+      "description": "Latest reasoning-first model optimized for complex agentic workflows and coding. Features adaptive thinking, 1M context window, and integrated grounding.",
       "context_window": 1048576,
       "max_output_tokens": 65536,
       "max_thinking_tokens": 32768,
@@ -70,15 +52,24 @@
       "max_image_size_mb": 32.0
     },
     {
-      "model_name": "gemini-3-flash-preview",
-      "friendly_name": "Gemini Flash 3.0 Preview",
+      "model_name": "gemini-3-flash",
+      "friendly_name": "Gemini Flash 3.0",
       "aliases": [
         "flash3",
-        "flash-3",
-        "gemini3-flash"
+        "3flash",
+        "gemini3flash",
+        "flash2",
+        "2flash",
+        "20flash",
+        "flashlite2",
+        "2flashlite",
+        "20flashlite",
+        "flashlite",
+        "flash-lite",
+        "lite"
       ],
-      "intelligence_score": 12,
-      "description": "Gemini 3 Flash Preview (200K context) - Newest and fastest Flash model, ~15% smarter than 2.5 Flash. $0.50/M input, $3/M output.",
+      "intelligence_score": 100,
+      "description": "Best model for complex multimodal understanding, designed to tackle challenging agentic problems with strong coding and state-of-the-art reasoning. Now default in Gemini app.",
       "context_window": 200000,
       "max_output_tokens": 65536,
       "max_thinking_tokens": 24576,
@@ -89,6 +80,7 @@
       "supports_json_mode": true,
       "supports_images": true,
       "supports_temperature": true,
+      "allow_code_generation": true,
       "max_image_size_mb": 20.0
     },
     {
@@ -96,10 +88,10 @@
       "friendly_name": "Gemini Flash 2.5",
       "aliases": [
         "flash",
-        "flash2.5"
+        "flash25"
       ],
-      "intelligence_score": 10,
-      "description": "Ultra-fast (1M context) - Quick analysis, simple queries, rapid iterations. Best balance of speed and context.",
+      "intelligence_score": 12,
+      "description": "Lightning-fast and highly capable. Delivers balance of intelligence and latency with controllable thinking budgets for versatile applications.",
       "context_window": 1048576,
       "max_output_tokens": 65536,
       "max_thinking_tokens": 24576,
@@ -110,28 +102,7 @@
       "supports_json_mode": true,
       "supports_images": true,
       "supports_temperature": true,
-      "max_image_size_mb": 20.0
-    },
-    {
-      "model_name": "gemini-2.5-flash-lite",
-      "friendly_name": "Gemini Flash Lite 2.5",
-      "aliases": [
-        "flashlite",
-        "flash-lite",
-        "lite"
-      ],
-      "intelligence_score": 8,
-      "description": "Gemini 2.5 Flash Lite (1M context) - Ultra-low latency and cost. $0.10/M input, $0.40/M output. Supports thinking mode.",
-      "context_window": 1048576,
-      "max_output_tokens": 65536,
-      "max_thinking_tokens": 16384,
-      "supports_extended_thinking": true,
-      "supports_system_prompts": true,
-      "supports_streaming": true,
-      "supports_function_calling": true,
-      "supports_json_mode": true,
-      "supports_images": true,
-      "supports_temperature": true,
+      "allow_code_generation": true,
       "max_image_size_mb": 20.0
     }
   ]
