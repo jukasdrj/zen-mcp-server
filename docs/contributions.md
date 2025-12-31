@@ -137,7 +137,29 @@ Use our [PR template](../.github/pull_request_template.md) and ensure:
 - Keep functions focused and under 50 lines when possible
 - Use descriptive variable names
 
-#### Example:
+#### Docstring Requirements (STRICTLY ENFORCED)
+
+**All contributions MUST follow these docstring standards:**
+
+1. **Required for ALL:**
+   - Public functions and methods
+   - Public classes
+   - Module-level code (at top of file)
+
+2. **Format:** Use Google-style docstrings (not NumPy or reStructuredText)
+
+3. **Minimum Content:**
+   - One-line summary (ends with period)
+   - Blank line (if additional sections present)
+   - `Args:` section for all parameters (type optional if type-hinted)
+   - `Returns:` section for non-None returns
+   - `Raises:` section for any exceptions raised
+
+4. **Private functions (_method):** Docstrings optional but encouraged
+
+5. **Validation:** Docstrings are checked during code review. Missing or incomplete docstrings will result in PR rejection.
+
+#### Docstring Example:
 ```python
 def process_model_response(
     response: ModelResponse,
@@ -156,6 +178,34 @@ def process_model_response(
         ValueError: If response is invalid or exceeds limits
     """
     # Implementation here
+```
+
+#### Class Docstring Example:
+```python
+class ModelProvider:
+    """Abstract base class for AI model providers.
+
+    This class defines the interface that all provider implementations
+    must follow. Providers handle API communication, response parsing,
+    and error handling for their respective AI services.
+
+    Attributes:
+        name: Human-readable provider name
+        available_models: List of model IDs this provider supports
+    """
+    pass
+```
+
+#### Module Docstring Example:
+```python
+"""Conversation memory management for multi-turn MCP tool interactions.
+
+This module implements thread-based conversation storage with:
+- UUID-keyed conversation threads
+- File deduplication (newest-first strategy)
+- Automatic TTL and turn limit enforcement
+- Cross-tool context preservation
+"""
 ```
 
 #### Import Organization
