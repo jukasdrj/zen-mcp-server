@@ -60,11 +60,9 @@ def test_registry_lists_roles():
     roles = registry.list_roles("gemini")
     assert "default" in roles
     gemini_client = registry.get_client("gemini")
-    # Verify gemini uses --yolo and --model gemini-3-pro
+    # Verify gemini uses --yolo in auto mode (no explicit model)
     assert gemini_client.config_args == [
         "--yolo",
-        "--model",
-        "gemini-3-pro",
     ]
 
 

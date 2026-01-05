@@ -4,7 +4,7 @@
 
 The `clink` tool transforms your CLI into a multi-agent orchestrator. Delegate to Gemini's 1M context for specialized tasks while preserving conversation continuity. Instead of context-switching or token bloat, spawn fresh subagents that handle complex tasks in isolation and return only the results you need.
 
-> **CONFIGURATION NOTE**: This installation is configured to use **only Gemini CLI** with the latest **gemini-3-pro** model. Codex and Claude CLI configurations have been disabled. To re-enable them or add other CLIs, rename the `.disabled` files in `conf/cli_clients/`.
+> **CONFIGURATION NOTE**: This installation is configured to use **only Gemini CLI** in auto mode (which selects the best available model for each task). Codex and Claude CLI configurations have been disabled. To re-enable them or add other CLIs, rename the `.disabled` files in `conf/cli_clients/`.
 
 > **CAUTION**: Clink launches real CLI agents with relaxed permission flags (Gemini ships with `--yolo`) so they can edit files and run tools autonomously via MCP. If that's more access than you want, remove those flags from `conf/cli_clients/gemini.json`—the CLI can still open/read files and report findings, it just won't auto-apply edits. You can also tighten role prompts or system prompts with stop-words/guardrails, or disable clink entirely. Otherwise, keep the shipped presets confined to workspaces you fully trust.
 
