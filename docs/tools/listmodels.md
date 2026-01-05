@@ -46,8 +46,8 @@ The tool displays:
 📋 Available Models by Provider
 
 🔹 Google (Gemini) - ✅ Configured
-  • pro (gemini-2.5-pro) - 1M context, thinking modes
-  • flash (gemini-2.0-flash-experimental) - 1M context, ultra-fast
+  • pro (gemini-3-pro) - 1M context, extended thinking
+  • flash (gemini-3-flash) - 200K context, extended thinking
 
 🔹 OpenAI - ✅ Configured  
   • o3 (o3) - 200K context, strong reasoning

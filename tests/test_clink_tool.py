@@ -55,18 +55,16 @@ async def test_clink_tool_execute(monkeypatch):
 def test_registry_lists_roles():
     registry = get_registry()
     clients = registry.list_clients()
-    assert {"codex", "gemini"}.issubset(set(clients))
+    assert "gemini" in clients
+    assert len(clients) == 1  # Only gemini should be enabled
     roles = registry.list_roles("gemini")
     assert "default" in roles
-    assert "default" in registry.list_roles("codex")
-    codex_client = registry.get_client("codex")
-    # Verify codex uses exec --json and --enable web_search_request
-    assert codex_client.config_args == [
-        "exec",
-        "--json",
-        "--dangerously-bypass-approvals-and-sandbox",
-        "--enable",
-        "web_search_request",
+    gemini_client = registry.get_client("gemini")
+    # Verify gemini uses --yolo and --model gemini-3-pro
+    assert gemini_client.config_args == [
+        "--yolo",
+        "--model",
+        "gemini-3-pro",
     ]
 
 

@@ -2,9 +2,11 @@
 
 **Spawn AI subagents, connect external CLIs, orchestrate isolated contexts – all without leaving your session**
 
-The `clink` tool transforms your CLI into a multi-agent orchestrator. Launch isolated Codex instances from _within_ Codex, delegate to Gemini's 1M context, or run specialized Claude agents—all while preserving conversation continuity. Instead of context-switching or token bloat, spawn fresh subagents that handle complex tasks in isolation and return only the results you need.
+The `clink` tool transforms your CLI into a multi-agent orchestrator. Delegate to Gemini's 1M context for specialized tasks while preserving conversation continuity. Instead of context-switching or token bloat, spawn fresh subagents that handle complex tasks in isolation and return only the results you need.
 
-> **CAUTION**: Clink launches real CLI agents with relaxed permission flags (Gemini ships with `--yolo`, Codex with `--dangerously-bypass-approvals-and-sandbox`, Claude with `--permission-mode acceptEdits`) so they can edit files and run tools autonomously via MCP. If that’s more access than you want, remove those flags—the CLI can still open/read files and report findings, it just won’t auto-apply edits. You can also tighten role prompts or system prompts with stop-words/guardrails, or disable clink entirely. Otherwise, keep the shipped presets confined to workspaces you fully trust.
+> **CONFIGURATION NOTE**: This installation is configured to use **only Gemini CLI** with the latest **gemini-3-pro** model. Codex and Claude CLI configurations have been disabled. To re-enable them or add other CLIs, rename the `.disabled` files in `conf/cli_clients/`.
+
+> **CAUTION**: Clink launches real CLI agents with relaxed permission flags (Gemini ships with `--yolo`) so they can edit files and run tools autonomously via MCP. If that's more access than you want, remove those flags from `conf/cli_clients/gemini.json`—the CLI can still open/read files and report findings, it just won't auto-apply edits. You can also tighten role prompts or system prompts with stop-words/guardrails, or disable clink entirely. Otherwise, keep the shipped presets confined to workspaces you fully trust.
 
 ## Why Use Clink (CLI + Link)?
 
@@ -78,7 +80,7 @@ You can make your own custom roles in `conf/cli_clients/` or tweak any of the sh
 ## Tool Parameters
 
 - `prompt`: Your question or task for the external CLI (required)
-- `cli_name`: Which CLI to use - `gemini` (default), `claude`, `codex`, or add your own in `conf/cli_clients/`
+- `cli_name`: Which CLI to use - `gemini` (default and only enabled CLI)
 - `role`: Preset role - `default`, `planner`, `codereviewer` (default: `default`)
 - `files`: Optional file paths for context (references only, CLI opens files itself)
 - `images`: Optional image paths for visual context

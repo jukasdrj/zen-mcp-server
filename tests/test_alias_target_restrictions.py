@@ -39,9 +39,11 @@ class TestAliasTargetRestrictions:
 
         # Should include both aliases and their targets
         assert "flash" in all_known  # alias
-        assert "gemini-2.5-flash" in all_known  # target of 'flash'
+        assert "gemini-2.5-flash" in all_known  # target of 'flash' (legacy)
+        assert "flash3" in all_known  # alias
+        assert "gemini-3-flash" in all_known  # target of 'flash3'
         assert "pro" in all_known  # alias
-        assert "gemini-2.5-pro" in all_known  # target of 'pro'
+        assert "gemini-3-pro" in all_known  # target of 'pro'
 
     @patch.dict(os.environ, {"OPENAI_ALLOWED_MODELS": "o4-mini"})  # Allow target
     def test_restriction_policy_allows_alias_when_target_allowed(self):

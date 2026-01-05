@@ -80,9 +80,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-3-pro-preview",  # Gemini 3 Pro Preview for deep thinking
-                    "FAST_RESPONSE": "gemini3-flash",  # Gemini 3 Flash Preview for speed
-                    "BALANCED": "gemini3-flash",  # Gemini 3 Flash Preview as balanced
+                    "EXTENDED_REASONING": "gemini-3-pro",  # Gemini 3 Pro for deep thinking
+                    "FAST_RESPONSE": "gemini3flash",  # Gemini 3 Flash for speed (alias selected by reverse alphabetical sort)
+                    "BALANCED": "gemini3flash",  # Gemini 3 Flash as balanced (alias selected by reverse alphabetical sort)
                 },
             ),
             # Only OpenAI API available
@@ -108,9 +108,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "grok-4-1-fast-reasoning",  # Latest Grok 4.1 Fast Reasoning
-                    "FAST_RESPONSE": "grok-4-1-fast-reasoning",  # Latest fast SKU
-                    "BALANCED": "grok-4-1-fast-reasoning",  # Latest balanced default
+                    "EXTENDED_REASONING": "grok-4",  # XAI FALLBACK_MODEL
+                    "FAST_RESPONSE": "grok-4",  # XAI FALLBACK_MODEL
+                    "BALANCED": "grok-4",  # XAI FALLBACK_MODEL
                 },
             ),
             # Both Gemini and OpenAI available - Google comes first in priority
@@ -122,9 +122,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-3-pro-preview",  # Gemini 3 Pro Preview comes first in priority
-                    "FAST_RESPONSE": "gemini3-flash",  # Gemini 3 Flash Preview for speed
-                    "BALANCED": "gemini3-flash",  # Gemini 3 Flash Preview as balanced
+                    "EXTENDED_REASONING": "gemini-3-pro",  # Gemini 3 Pro comes first in priority
+                    "FAST_RESPONSE": "gemini3flash",  # Gemini 3 Flash (alias selected by reverse alphabetical)
+                    "BALANCED": "gemini3flash",  # Gemini 3 Flash (alias selected by reverse alphabetical)
                 },
             ),
             # All native APIs available - Google still comes first
@@ -136,9 +136,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-3-pro-preview",  # Gemini 3 Pro Preview comes first in priority
-                    "FAST_RESPONSE": "gemini3-flash",  # Gemini 3 Flash Preview for speed
-                    "BALANCED": "gemini3-flash",  # Gemini 3 Flash Preview as balanced
+                    "EXTENDED_REASONING": "gemini-3-pro",  # Gemini 3 Pro comes first in priority
+                    "FAST_RESPONSE": "gemini3flash",  # Gemini 3 Flash (alias selected by reverse alphabetical)
+                    "BALANCED": "gemini3flash",  # Gemini 3 Flash (alias selected by reverse alphabetical)
                 },
             ),
         ],
@@ -442,7 +442,7 @@ class TestAutoModeComprehensive:
 
             # Should still include all Gemini models (no restrictions)
             assert "gemini-2.5-flash" in available_models
-            assert "gemini-2.5-pro" in available_models
+            assert "gemini-3-pro" in available_models
 
     def test_openrouter_fallback_when_no_native_apis(self):
         """Test that OpenRouter provides fallback models when no native APIs are available."""
@@ -476,8 +476,8 @@ class TestAutoModeComprehensive:
             # Mock OpenRouter registry to return known models
             mock_registry = MagicMock()
             mock_registry.list_models.return_value = [
-                "google/gemini-2.5-flash",
-                "google/gemini-2.5-pro",
+                "google/gemini-3-flash",
+                "google/gemini-3-pro",
                 "openai/o3",
                 "openai/o4-mini",
                 "anthropic/claude-opus-4",
