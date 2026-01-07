@@ -2,6 +2,18 @@
 
 <!-- version list -->
 
+## Unreleased
+
+### Documentation
+
+- **gemini**: Update all documentation to reflect correct Gemini model names
+  - Document `gemini-3-pro-preview` and `gemini-3-flash-preview` as current preview models
+  - Document stable production models: `gemini-2.5-pro`, `gemini-2.5-flash`, `gemini-2.5-flash-lite`
+  - Add `-latest` alias documentation (`gemini-flash-latest`, `gemini-pro-latest`)
+  - Add troubleshooting section for 403/404 errors related to deprecated model names
+  - Update model recommendation tables across README, configuration guide, and custom models guide
+  - Remove outdated Gemini CLI tool invocation warning from gemini-setup.md
+
 ## v9.8.2 (2025-12-15)
 
 ### Bug Fixes

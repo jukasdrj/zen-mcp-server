@@ -80,7 +80,7 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-3-pro",  # Gemini 3 Pro for deep thinking
+                    "EXTENDED_REASONING": "gemini-3-pro-preview",  # Gemini 3 Pro for deep thinking
                     "FAST_RESPONSE": "gemini3flash",  # Gemini 3 Flash for speed (alias selected by reverse alphabetical sort)
                     "BALANCED": "gemini3flash",  # Gemini 3 Flash as balanced (alias selected by reverse alphabetical sort)
                 },
@@ -122,7 +122,7 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-3-pro",  # Gemini 3 Pro comes first in priority
+                    "EXTENDED_REASONING": "gemini-3-pro-preview",  # Gemini 3 Pro comes first in priority
                     "FAST_RESPONSE": "gemini3flash",  # Gemini 3 Flash (alias selected by reverse alphabetical)
                     "BALANCED": "gemini3flash",  # Gemini 3 Flash (alias selected by reverse alphabetical)
                 },
@@ -136,7 +136,7 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "gemini-3-pro",  # Gemini 3 Pro comes first in priority
+                    "EXTENDED_REASONING": "gemini-3-pro-preview",  # Gemini 3 Pro comes first in priority
                     "FAST_RESPONSE": "gemini3flash",  # Gemini 3 Flash (alias selected by reverse alphabetical)
                     "BALANCED": "gemini3flash",  # Gemini 3 Flash (alias selected by reverse alphabetical)
                 },
@@ -442,7 +442,7 @@ class TestAutoModeComprehensive:
 
             # Should still include all Gemini models (no restrictions)
             assert "gemini-2.5-flash" in available_models
-            assert "gemini-3-pro" in available_models
+            assert "gemini-3-pro-preview" in available_models
 
     def test_openrouter_fallback_when_no_native_apis(self):
         """Test that OpenRouter provides fallback models when no native APIs are available."""
@@ -476,8 +476,8 @@ class TestAutoModeComprehensive:
             # Mock OpenRouter registry to return known models
             mock_registry = MagicMock()
             mock_registry.list_models.return_value = [
-                "google/gemini-3-flash",
-                "google/gemini-3-pro",
+                "google/gemini-3-flash-preview",
+                "google/gemini-3-pro-preview",
                 "openai/o3",
                 "openai/o4-mini",
                 "anthropic/claude-opus-4",

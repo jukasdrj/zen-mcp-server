@@ -55,7 +55,7 @@ class TestIntelligentFallback:
         ModelProviderRegistry.register_provider(ProviderType.GOOGLE, GeminiModelProvider)
 
         fallback_model = ModelProviderRegistry.get_preferred_fallback_model()
-        assert fallback_model == "gemini3-flash"  # Gemini 3 Flash Preview
+        assert fallback_model == "gemini3flash"  # Gemini 3 Flash Preview
 
     @patch.dict(os.environ, {"OPENAI_API_KEY": "sk-test-key", "GEMINI_API_KEY": "test-gemini-key"}, clear=False)
     def test_prefers_openai_when_both_available(self):
@@ -68,7 +68,7 @@ class TestIntelligentFallback:
         ModelProviderRegistry.register_provider(ProviderType.GOOGLE, GeminiModelProvider)
 
         fallback_model = ModelProviderRegistry.get_preferred_fallback_model()
-        assert fallback_model == "gemini3-flash"  # Gemini has priority now (based on new PROVIDER_PRIORITY_ORDER)
+        assert fallback_model == "gemini3flash"  # Gemini has priority now (based on new PROVIDER_PRIORITY_ORDER)
 
     @patch.dict(os.environ, {"OPENAI_API_KEY": "", "GEMINI_API_KEY": ""}, clear=False)
     def test_fallback_when_no_keys_available(self):
@@ -186,8 +186,8 @@ class TestIntelligentFallback:
 
                 history, tokens = build_conversation_history(context, model_context=None)
 
-                # Should use gemini3-flash when only Gemini is available
-                mock_context_class.assert_called_once_with("gemini3-flash")
+                # Should use gemini3flash when only Gemini is available
+                mock_context_class.assert_called_once_with("gemini3flash")
 
     def test_non_auto_mode_unchanged(self):
         """Test that non-auto mode behavior is unchanged"""

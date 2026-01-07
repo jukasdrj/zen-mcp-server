@@ -60,8 +60,8 @@ class TestAutoModeProviderSelection:
 
             # Should select appropriate Gemini models
             assert extended_reasoning in ["gemini-3-pro-preview", "gemini-2.5-pro", "pro"]
-            assert fast_response in ["gemini-3-flash-preview", "gemini3-flash", "gemini-2.5-flash", "flash", "flash3"]
-            assert balanced in ["gemini-3-flash-preview", "gemini3-flash", "gemini-2.5-flash", "flash", "flash3"]
+            assert fast_response in ["gemini-3-flash-preview", "gemini-2.5-flash", "flash", "flash3", "gemini3flash"]
+            assert balanced in ["gemini-3-flash-preview", "gemini-2.5-flash", "flash", "flash3", "gemini3flash"]
 
         finally:
             # Restore original environment
@@ -141,8 +141,8 @@ class TestAutoModeProviderSelection:
             # Should prefer Gemini now (based on new provider priority: Gemini before OpenAI)
             assert extended_reasoning == "gemini-3-pro-preview"  # Gemini 3 Pro Preview has higher priority now
 
-            # Should prefer Gemini for fast response (gemini3-flash is the new fastest)
-            assert fast_response == "gemini3-flash"  # Gemini 3 Flash Preview has higher priority now
+            # Should prefer Gemini for fast response (gemini3flash or gemini3-flash is the new fastest)
+            assert fast_response in ["gemini3-flash", "gemini3flash"]  # Gemini 3 Flash Preview has higher priority now
 
         finally:
             # Restore original environment

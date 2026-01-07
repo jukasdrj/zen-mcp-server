@@ -157,7 +157,7 @@ class TestModelSelection:
 
             model = ModelProviderRegistry.get_preferred_fallback_model(ToolModelCategory.FAST_RESPONSE)
             # Gemini should return one of its models for fast response
-            assert model in ["gemini-3-flash-preview", "gemini3-flash", "gemini-2.5-flash", "gemini-2.5-pro"]
+            assert model in ["gemini-3-flash-preview", "gemini-2.5-flash", "gemini-2.5-pro"]
 
     def test_balanced_category_fallback(self):
         """Test BALANCED category uses existing logic."""

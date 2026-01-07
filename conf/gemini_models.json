@@ -26,15 +26,14 @@
   },
   "models": [
     {
-      "model_name": "gemini-3-pro",
-      "friendly_name": "Gemini Pro 3.0",
+      "model_name": "gemini-3-pro-preview",
+      "friendly_name": "Gemini Pro 3.0 Preview",
       "aliases": [
         "pro",
         "gemini3pro",
         "3pro",
         "gemini-pro",
-        "pro25",
-        "gemini-pro-2.5"
+        "gemini-3-pro"
       ],
       "intelligence_score": 100,
       "description": "Latest reasoning-first model optimized for complex agentic workflows and coding. Features adaptive thinking, 1M context window, and integrated grounding.",
@@ -52,25 +51,19 @@
       "max_image_size_mb": 32.0
     },
     {
-      "model_name": "gemini-3-flash",
-      "friendly_name": "Gemini Flash 3.0",
+      "model_name": "gemini-3-flash-preview",
+      "friendly_name": "Gemini Flash 3.0 Preview",
       "aliases": [
         "flash3",
+        "flash-3",
         "3flash",
         "gemini3flash",
-        "flash2",
-        "2flash",
-        "20flash",
-        "flashlite2",
-        "2flashlite",
-        "20flashlite",
-        "flashlite",
-        "flash-lite",
-        "lite"
+        "gemini3-flash",
+        "gemini-3-flash"
       ],
       "intelligence_score": 100,
       "description": "Best model for complex multimodal understanding, designed to tackle challenging agentic problems with strong coding and state-of-the-art reasoning. Now default in Gemini app.",
-      "context_window": 200000,
+      "context_window": 1048576,
       "max_output_tokens": 65536,
       "max_thinking_tokens": 24576,
       "supports_extended_thinking": true,
@@ -88,10 +81,11 @@
       "friendly_name": "Gemini Flash 2.5",
       "aliases": [
         "flash",
-        "flash25"
+        "flash25",
+        "gemini-flash-latest"
       ],
-      "intelligence_score": 12,
-      "description": "Lightning-fast and highly capable. Delivers balance of intelligence and latency with controllable thinking budgets for versatile applications.",
+      "intelligence_score": 71,
+      "description": "Lightning-fast and highly capable stable version. Delivers balance of intelligence and latency with controllable thinking budgets for versatile applications.",
       "context_window": 1048576,
       "max_output_tokens": 65536,
       "max_thinking_tokens": 24576,
@@ -103,6 +97,52 @@
       "supports_images": true,
       "supports_temperature": true,
       "allow_code_generation": true,
+      "max_image_size_mb": 20.0
+    },
+    {
+      "model_name": "gemini-2.5-pro",
+      "friendly_name": "Gemini Pro 2.5",
+      "aliases": [
+        "pro25",
+        "gemini-pro-2.5",
+        "gemini-pro-latest"
+      ],
+      "intelligence_score": 71,
+      "description": "Stable production-ready Pro model with advanced reasoning capabilities and multimodal understanding.",
+      "context_window": 2097152,
+      "max_output_tokens": 65536,
+      "max_thinking_tokens": 32768,
+      "supports_extended_thinking": true,
+      "supports_system_prompts": true,
+      "supports_streaming": true,
+      "supports_function_calling": true,
+      "supports_json_mode": true,
+      "supports_images": true,
+      "supports_temperature": true,
+      "allow_code_generation": true,
+      "max_image_size_mb": 32.0
+    },
+    {
+      "model_name": "gemini-2.5-flash-lite",
+      "friendly_name": "Gemini Flash Lite 2.5",
+      "aliases": [
+        "flashlite",
+        "flash-lite",
+        "lite"
+      ],
+      "intelligence_score": 50,
+      "description": "Ultra-lightweight model optimized for speed and cost efficiency. Best for simple tasks requiring quick responses.",
+      "context_window": 1048576,
+      "max_output_tokens": 8192,
+      "max_thinking_tokens": 0,
+      "supports_extended_thinking": false,
+      "supports_system_prompts": true,
+      "supports_streaming": true,
+      "supports_function_calling": true,
+      "supports_json_mode": true,
+      "supports_images": true,
+      "supports_temperature": true,
+      "allow_code_generation": false,
       "max_image_size_mb": 20.0
     }
   ]

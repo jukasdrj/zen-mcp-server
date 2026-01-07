@@ -81,6 +81,12 @@ See [Logging Documentation](logging.md) for more details on accessing logs.
 - Run `./run-server.sh` to reinstall dependencies
 - Check virtual environment is activated: should see `.pal_venv` in the Python path
 
+**Gemini 403/404 Errors**
+- Ensure you're using correct model names: `gemini-3-pro-preview`, `gemini-3-flash-preview` (not `gemini-3-pro`, `gemini-3-flash`)
+- Use aliases for simplicity: `pro`, `flash3`, `flash`, `pro25`, `lite`
+- For Gemini 3.0 Preview models, ensure you have a paid API key (free tier has limited access)
+- See [Gemini Setup Guide](gemini-setup.md#troubleshooting) for detailed troubleshooting
+
 ### 6. Environment Issues
 
 **Virtual Environment Problems**
