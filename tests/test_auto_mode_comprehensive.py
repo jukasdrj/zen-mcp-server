@@ -108,9 +108,9 @@ class TestAutoModeComprehensive:
                     "OPENROUTER_API_KEY": None,
                 },
                 {
-                    "EXTENDED_REASONING": "grok-4",  # XAI FALLBACK_MODEL
-                    "FAST_RESPONSE": "grok-4",  # XAI FALLBACK_MODEL
-                    "BALANCED": "grok-4",  # XAI FALLBACK_MODEL
+                    "EXTENDED_REASONING": "grok-4-1-fast-non-reasoning",  # XAI PRIMARY_MODEL
+                    "FAST_RESPONSE": "grok-4-1-fast-non-reasoning",  # XAI PRIMARY_MODEL
+                    "BALANCED": "grok-4-1-fast-non-reasoning",  # XAI PRIMARY_MODEL
                 },
             ),
             # Both Gemini and OpenAI available - Google comes first in priority
