@@ -178,6 +178,14 @@ CLAUDE.local.md
 # Claude Code personal settings
 .claude/settings.local.json
 
+# Planning workflow files (working/temporary plans)
+task_plan.md
+findings.md
+progress.md
+.claude/plans/task_plan.md
+.claude/plans/findings.md
+.claude/plans/progress.md
+
 # Standalone mode files
 .pal_venv/
 .docker_cleaned
