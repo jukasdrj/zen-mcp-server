@@ -30,7 +30,7 @@ class TestModelThinkingConfig(BaseSimulatorTest):
                 "chat",
                 {
                     "prompt": "What is 2 + 2? Please think carefully and explain.",
-                    "model": "pro",  # Should resolve to gemini-2.5-pro
+                    "model": "pro",  # Should resolve to gemini-3.1-pro-preview
                     "thinking_mode": "high",  # Should use thinking_config
                 },
             )
@@ -79,7 +79,7 @@ class TestModelThinkingConfig(BaseSimulatorTest):
         test_cases = [
             ("pro", "should work with Pro model"),
             ("flash", "should work with Flash model"),
-            ("gemini-2.5-pro", "should work with full Pro model name"),
+            ("gemini-3.1-pro-preview", "should work with full Pro model name"),
             ("gemini-2.5-flash", "should work with full Flash model name"),
         ]
 

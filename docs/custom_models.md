@@ -194,7 +194,7 @@ CUSTOM_MODEL_NAME=your-loaded-model
 # OpenRouter models:
 "Use opus for deep analysis"         # → anthropic/claude-opus-4
 "Use sonnet to review this code"     # → anthropic/claude-sonnet-4
-"Use pro via pal to analyze this"    # → google/gemini-2.5-pro
+"Use pro via pal to analyze this"    # → google/gemini-3.1-pro-preview
 "Use gpt4o via pal to analyze this"  # → openai/gpt-4o
 "Use mistral via pal to optimize"    # → mistral/mistral-large
 

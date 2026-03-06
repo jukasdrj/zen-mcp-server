@@ -201,7 +201,7 @@ class ModelProvider(ABC):
 **Primary Providers:**
 
 1. **Gemini** (`providers/gemini.py`)
-   - Models: `gemini-2.5-pro`, `gemini-2.5-pro-computer-use`, `gemini-2.5-flash-preview-09-2025`
+   - Models: `gemini-3.1-pro-preview`, `gemini-3-pro-preview`, `gemini-3-flash-preview`, `gemini-2.5-flash`
    - Supports: Extended thinking, vision, 1M context window
 
 2. **X.AI Grok** (`providers/xai.py`)
@@ -286,7 +286,7 @@ add_turn(thread_id, "assistant", response, tool_name="codereview")
 **Provider Selection Logic:**
 ```python
 # Auto-selects provider based on model name
-provider = registry.get_provider_for_model("gemini-2.5-pro")  # Returns GeminiProvider
+provider = registry.get_provider_for_model("gemini-3.1-pro-preview")  # Returns GeminiProvider
 provider = registry.get_provider_for_model("grok-4")  # Returns XAIProvider
 provider = registry.get_provider_for_model("grok-4-heavy")  # Returns XAIProvider
 ```
@@ -408,11 +408,11 @@ class DebugRequest(WorkflowRequest):
   },
   "models": [
     {
-      "model_name": "gemini-2.5-pro",
-      "friendly_name": "Google (Gemini 2.5 Pro)",
+      "model_name": "gemini-3.1-pro-preview",
+      "friendly_name": "Google (Gemini 3.1 Pro Preview)",
       "aliases": ["pro", "gemini-pro"],
       "intelligence_score": 18,
-      "description": "Gemini 2.5 Pro (1M context, thinking, vision)",
+      "description": "Gemini 3.1 Pro Preview (1M context, thinking, vision)",
       "context_window": 1000000,
       "max_output_tokens": 128000,
       "supports_extended_thinking": true,
@@ -426,10 +426,11 @@ class DebugRequest(WorkflowRequest):
 
 **Available Models (Nov 2025):**
 
-**Gemini (3 models):**
-- `gemini-2.5-pro` (1M context, thinking, vision) - Score 18
-- `gemini-2.5-pro-computer-use` (1M context, UI automation) - Score 19
-- `gemini-2.5-flash-preview-09-2025` (1M context, fast) - Score 11
+**Gemini (4 models):**
+- `gemini-3.1-pro-preview` (1M context, thinking, vision) - Score 18
+- `gemini-3-pro-preview` (1M context, thinking, vision) - Score 17
+- `gemini-3-flash-preview` (1M context, fast) - Score 13
+- `gemini-2.5-flash` (1M context, fast) - Score 11
 
 **X.AI Grok (4 models):**
 - `grok-4` (256K context, real-time search) - Score 18
@@ -509,7 +510,7 @@ def test_debug_tool():
         total_steps=3,
         next_step_required=True,
         findings="Starting investigation",
-        model="gemini-2.5-pro"
+        model="gemini-3.1-pro-preview"
     )
     result = tool.execute(request)
     assert result["success"]
@@ -573,12 +574,12 @@ def test_cross_tool_continuation():
 request = {"prompt": "Review this code", "model": "auto"}
 
 # Explicit mode - User picks model
-request = {"prompt": "Review this code", "model": "gemini-2.5-pro"}
+request = {"prompt": "Review this code", "model": "gemini-3.1-pro-preview"}
 request = {"prompt": "Review this code", "model": "grok-4-heavy"}
 request = {"prompt": "Review this code", "model": "grok-4"}
 
 # Alias mode - User uses short name
-request = {"prompt": "Review this code", "model": "pro"}  # gemini-2.5-pro
+request = {"prompt": "Review this code", "model": "pro"}  # gemini-3.1-pro-preview
 request = {"prompt": "Review this code", "model": "grok4"}  # grok-4
 request = {"prompt": "Review this code", "model": "grokcode"}  # grok-code-fast-1
 ```

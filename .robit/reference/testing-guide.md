@@ -42,7 +42,7 @@ def test_chat_basic():
     tool = ChatTool()
     request = ChatRequest(
         prompt="Explain async/await",
-        model="gemini-2.5-pro",
+        model="gemini-3.1-pro-preview",
         working_directory_absolute_path="/tmp"
     )
     

@@ -52,7 +52,7 @@ class ChatTool(SimpleTool):
   "tool": "chat",
   "arguments": {
     "prompt": "Explain async/await",
-    "model": "gemini-2.5-pro",
+    "model": "gemini-3.1-pro-preview",
     "working_directory_absolute_path": "/path/to/project"
   }
 }
@@ -65,7 +65,7 @@ class ChatTool(SimpleTool):
   "response": "Async/await explanation...",
   "continuation_id": "uuid-here",
   "metadata": {
-    "model_used": "gemini-2.5-pro",
+    "model_used": "gemini-3.1-pro-preview",
     "provider": "google"
   }
 }
@@ -84,7 +84,7 @@ class ChatTool(SimpleTool):
 # First call - creates thread
 response1 = chat_tool.execute(ChatRequest(
     prompt="Analyze this code",
-    model="gemini-2.5-pro"
+    model="gemini-3.1-pro-preview"
 ))
 continuation_id = response1["continuation_id"]
 

@@ -127,7 +127,7 @@ class GeminiModelProvider(RegistryBackedProviderMixin, ModelProvider):
 
         Args:
             prompt: The main user prompt/query to send to the model
-            model_name: Canonical model name or its alias (e.g., "gemini-2.5-pro", "flash", "pro")
+            model_name: Canonical model name or its alias (e.g., "gemini-3.1-pro-preview", "flash", "pro")
             system_prompt: Optional system instructions to prepend to the prompt for context/behavior
             temperature: Controls randomness in generation (0.0=deterministic, 1.0=creative), default 0.3
             max_output_tokens: Optional maximum number of tokens to generate in the response

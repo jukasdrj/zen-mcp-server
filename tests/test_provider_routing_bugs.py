@@ -287,7 +287,7 @@ class TestOpenRouterAliasRestrictions:
 
             # Expected aliases that should resolve to models:
             # o3-mini -> openai/o3-mini
-            # pro -> google/gemini-2.5-pro
+            # pro -> google/gemini-3.1-pro-preview
             # flash -> google/gemini-2.5-flash
             # o4-mini -> openai/o4-mini
             # o3 -> openai/o3

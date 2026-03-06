@@ -153,7 +153,7 @@ def test_mytool_basic():
     tool = MyTool()
     request = MyToolRequest(
         prompt="Test prompt",
-        model="gemini-2.5-pro",
+        model="gemini-3.1-pro-preview",
         working_directory_absolute_path="/tmp"
     )
     result = tool.execute(request)

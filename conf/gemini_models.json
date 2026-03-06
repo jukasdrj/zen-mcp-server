@@ -26,17 +26,40 @@
   },
   "models": [
     {
+      "model_name": "gemini-3.1-pro-preview",
+      "friendly_name": "Gemini Pro 3.1 Preview",
+      "aliases": [
+        "pro",
+        "gemini-pro",
+        "gemini31pro",
+        "3.1pro",
+        "gemini-3.1-pro"
+      ],
+      "intelligence_score": 100,
+      "description": "Most advanced Gemini model with dynamic thinking, powerful agentic and vibe coding capabilities. 1M context window, 64K output. Released Feb 2026.",
+      "context_window": 1048576,
+      "max_output_tokens": 65536,
+      "max_thinking_tokens": 32768,
+      "supports_extended_thinking": true,
+      "supports_system_prompts": true,
+      "supports_streaming": true,
+      "supports_function_calling": true,
+      "supports_json_mode": true,
+      "supports_images": true,
+      "supports_temperature": true,
+      "allow_code_generation": true,
+      "max_image_size_mb": 32.0
+    },
+    {
       "model_name": "gemini-3-pro-preview",
       "friendly_name": "Gemini Pro 3.0 Preview",
       "aliases": [
-        "pro",
         "gemini3pro",
         "3pro",
-        "gemini-pro",
         "gemini-3-pro"
       ],
-      "intelligence_score": 100,
-      "description": "Latest reasoning-first model optimized for complex agentic workflows and coding. Features adaptive thinking, 1M context window, and integrated grounding.",
+      "intelligence_score": 95,
+      "description": "Reasoning-first model optimized for complex agentic workflows and coding. Features adaptive thinking, 1M context window, and integrated grounding.",
       "context_window": 1048576,
       "max_output_tokens": 65536,
       "max_thinking_tokens": 32768,

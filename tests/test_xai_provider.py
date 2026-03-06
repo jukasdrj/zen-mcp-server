@@ -49,19 +49,13 @@ class TestXAIProvider:
         assert provider.validate_model_name("grok4") is True
         assert provider.validate_model_name("grok") is True
         assert provider.validate_model_name("grok-4.1-fast") is True
-        assert provider.validate_model_name("grok-4.1-fast-reasoning") is True
-        assert provider.validate_model_name("grok-4.1-fast-reasoning-latest") is True
-        assert provider.validate_model_name("grok-4.1-fast") is True
-        assert provider.validate_model_name("grok-4.1-fast-reasoning") is True
-        assert provider.validate_model_name("grok-4.1-fast-reasoning-latest") is True
 
         # Test invalid model
         assert provider.validate_model_name("invalid-model") is False
         assert provider.validate_model_name("gpt-4") is False
         assert provider.validate_model_name("gemini-pro") is False
-        # Note: grok-3 is now a valid alias for grok-4-1-fast-non-reasoning (for backwards compatibility)
-        assert provider.validate_model_name("grok-3") is True
-        # Note: grokfast is now a valid alias for grok-4-1-fast-non-reasoning
+        assert provider.validate_model_name("grok-3") is False
+        assert provider.validate_model_name("grok-4.1-fast-reasoning") is False
 
     def test_resolve_model_name(self):
         """Test model name resolution."""
@@ -70,8 +64,7 @@ class TestXAIProvider:
         # Test shorthand resolution
         assert provider._resolve_model_name("grok") == "grok-4-1-fast-non-reasoning"
         assert provider._resolve_model_name("grok4") == "grok-4-1-fast-non-reasoning"
-        assert provider._resolve_model_name("grok-4.1-fast-reasoning") == "grok-4-1-fast-non-reasoning"
-        assert provider._resolve_model_name("grok-4.1-fast-reasoning-latest") == "grok-4-1-fast-non-reasoning"
+        assert provider._resolve_model_name("grok41") == "grok-4-1-fast-non-reasoning"
 
         # Test full name passthrough
         assert provider._resolve_model_name("grok-4") == "grok-4-1-fast-non-reasoning"
@@ -120,7 +113,7 @@ class TestXAIProvider:
         assert capabilities.model_name == "grok-4-1-fast-non-reasoning"  # Should resolve to full name
         assert capabilities.context_window == 2_000_000
 
-        capabilities_fast = provider.get_capabilities("grok-4.1-fast-reasoning")
+        capabilities_fast = provider.get_capabilities("grok-4.1-fast")
         assert capabilities_fast.model_name == "grok-4-1-fast-non-reasoning"  # Should resolve to full name
 
     def test_unsupported_model_capabilities(self):
@@ -141,8 +134,6 @@ class TestXAIProvider:
             "grok",
             "grok4",
             "grok-4.1-fast",
-            "grok-4.1-fast-reasoning",
-            "grok-4.1-fast-reasoning-latest",
         ]
         for alias in non_thinking_aliases:
             assert provider.get_capabilities(alias).supports_extended_thinking is False
@@ -223,7 +214,6 @@ class TestXAIProvider:
 
         assert provider.validate_model_name("grok-4") is True
         assert provider.validate_model_name("grok-4.1-fast") is True
-        assert provider.validate_model_name("grok-4.1-fast-reasoning") is True
         assert provider.validate_model_name("grok") is True
         assert provider.validate_model_name("grok4") is True
 
@@ -263,7 +253,6 @@ class TestXAIProvider:
         # The old grok-4-1-fast-reasoning is just an alias
         assert grok4_config.model_name == "grok-4-1-fast-non-reasoning"
         assert "grok-4.1-fast" in grok4_config.aliases
-        assert "grok-4.1-fast-reasoning" in grok4_config.aliases
 
     @patch("providers.openai_compatible.OpenAI")
     def test_generate_content_resolves_alias_before_api_call(self, mock_openai_class):
@@ -347,12 +336,6 @@ class TestXAIProvider:
 
         # Test grok-4 -> grok-4-1-fast-non-reasoning
         provider.generate_content(prompt="Test", model_name="grok-4", temperature=0.7)
-        call_kwargs = mock_client.chat.completions.create.call_args[1]
-        assert call_kwargs["model"] == "grok-4-1-fast-non-reasoning"
-
-        # Test grok-4.1-fast-reasoning -> grok-4-1-fast-non-reasoning
-        mock_response.model = "grok-4-1-fast-non-reasoning"
-        provider.generate_content(prompt="Test", model_name="grok-4.1-fast-reasoning", temperature=0.7)
         call_kwargs = mock_client.chat.completions.create.call_args[1]
         assert call_kwargs["model"] == "grok-4-1-fast-non-reasoning"
 

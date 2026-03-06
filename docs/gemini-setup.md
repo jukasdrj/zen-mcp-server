@@ -7,18 +7,19 @@ This guide explains how to configure PAL MCP Server to work with [Gemini CLI](ht
 When using the native Gemini API with PAL MCP Server, you have access to:
 
 **Preview Models (Latest Generation):**
-- **`gemini-3-pro-preview`** (alias: `pro`) - Latest reasoning-first model with 1M context, 65K output, adaptive thinking
-- **`gemini-3-flash-preview`** (alias: `flash3`) - Best multimodal model with strong coding and state-of-the-art reasoning
-- Both support extended thinking, function calling, JSON mode, and vision
+- **`gemini-3.1-pro-preview`** (aliases: `pro`, `gemini-pro`) - TOP model, highest intelligence score, extended thinking
+- **`gemini-3-pro-preview`** (aliases: `gemini3pro`, `3pro`) - Strong reasoning-first model with 1M context, 65K output, adaptive thinking
+- **`gemini-3-flash-preview`** (aliases: `flash3`, `gemini-3-flash`) - Best multimodal model with strong coding and state-of-the-art reasoning
+- All preview models support extended thinking, function calling, JSON mode, and vision
 
 **Stable Production Models:**
-- **`gemini-2.5-pro`** (alias: `pro25`) - Stable Pro with 2M context, advanced reasoning
-- **`gemini-2.5-flash`** (alias: `flash`) - Lightning-fast stable version with 1M context
+- **`gemini-2.5-flash`** (aliases: `flash`, `flash25`) - Lightning-fast stable version with 1M context
+- **`gemini-2.5-pro`** (alias: `pro25`) - Stable Pro with advanced reasoning
 - **`gemini-2.5-flash-lite`** (alias: `lite`) - Ultra-lightweight for speed and cost efficiency
 
 **Convenience Aliases:**
 - `gemini-flash-latest` → `gemini-2.5-flash`
-- `gemini-pro-latest` → `gemini-2.5-pro`
+- `gemini-pro-latest` → `gemini-3.1-pro-preview`
 
 All models are defined in `/Users/juju/dev_repos/zen-mcp-server/conf/gemini_models.json`.
 
@@ -68,13 +69,15 @@ All 15 PAL tools are now available in your Gemini CLI session.
 If you encounter 403 Forbidden or 404 Not Found errors when using Gemini models, this is typically caused by using deprecated or incorrect model names. As of January 2026, ensure you're using the correct model names:
 
 **Correct Model Names:**
+- `gemini-3.1-pro-preview` (not `gemini-3.1-pro`)
 - `gemini-3-pro-preview` (not `gemini-3-pro`)
 - `gemini-3-flash-preview` (not `gemini-3-flash`)
-- `gemini-2.5-pro`, `gemini-2.5-flash`, `gemini-2.5-flash-lite` (stable models)
+- `gemini-2.5-flash`, `gemini-2.5-pro`, `gemini-2.5-flash-lite` (stable models)
 
 **Using Aliases:**
 The easiest approach is to use short aliases which are automatically mapped to the correct models:
-- `pro` → `gemini-3-pro-preview`
+- `pro` → `gemini-3.1-pro-preview`
+- `gemini3pro` → `gemini-3-pro-preview`
 - `flash3` → `gemini-3-flash-preview`
 - `flash` → `gemini-2.5-flash`
 - `pro25` → `gemini-2.5-pro`

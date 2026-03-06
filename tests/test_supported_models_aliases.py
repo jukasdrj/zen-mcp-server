@@ -20,7 +20,7 @@ class TestSupportedModelsAliases:
 
         # Test specific aliases
         assert "flash" in provider.MODEL_CAPABILITIES["gemini-2.5-flash"].aliases
-        assert "pro" in provider.MODEL_CAPABILITIES["gemini-3-pro-preview"].aliases
+        assert "pro" in provider.MODEL_CAPABILITIES["gemini-3.1-pro-preview"].aliases
         assert "flash3" in provider.MODEL_CAPABILITIES["gemini-3-flash-preview"].aliases
         assert "flash-3" in provider.MODEL_CAPABILITIES["gemini-3-flash-preview"].aliases
         assert "flashlite" in provider.MODEL_CAPABILITIES["gemini-2.5-flash-lite"].aliases
@@ -28,14 +28,14 @@ class TestSupportedModelsAliases:
 
         # Test alias resolution
         assert provider._resolve_model_name("flash") == "gemini-2.5-flash"
-        assert provider._resolve_model_name("pro") == "gemini-3-pro-preview"
+        assert provider._resolve_model_name("pro") == "gemini-3.1-pro-preview"
         assert provider._resolve_model_name("flash3") == "gemini-3-flash-preview"
         assert provider._resolve_model_name("flash-3") == "gemini-3-flash-preview"
         assert provider._resolve_model_name("flashlite") == "gemini-2.5-flash-lite"
 
         # Test case insensitive resolution
         assert provider._resolve_model_name("Flash") == "gemini-2.5-flash"
-        assert provider._resolve_model_name("PRO") == "gemini-3-pro-preview"
+        assert provider._resolve_model_name("PRO") == "gemini-3.1-pro-preview"
 
     def test_openai_provider_aliases(self):
         """Test OpenAI provider's alias structure."""
@@ -86,17 +86,17 @@ class TestSupportedModelsAliases:
         # Test specific aliases
         assert "grok" in provider.MODEL_CAPABILITIES["grok-4-1-fast-non-reasoning"].aliases
         assert "grok4" in provider.MODEL_CAPABILITIES["grok-4-1-fast-non-reasoning"].aliases
-        assert "grok-4.1-fast-reasoning" in provider.MODEL_CAPABILITIES["grok-4-1-fast-non-reasoning"].aliases
+        assert "grok-4.1-fast" in provider.MODEL_CAPABILITIES["grok-4-1-fast-non-reasoning"].aliases
 
         # Test alias resolution
         assert provider._resolve_model_name("grok") == "grok-4-1-fast-non-reasoning"
         assert provider._resolve_model_name("grok4") == "grok-4-1-fast-non-reasoning"
-        assert provider._resolve_model_name("grok-4.1-fast-reasoning") == "grok-4-1-fast-non-reasoning"
-        assert provider._resolve_model_name("grok-4.1-fast-reasoning-latest") == "grok-4-1-fast-non-reasoning"
+        assert provider._resolve_model_name("grok41") == "grok-4-1-fast-non-reasoning"
+        assert provider._resolve_model_name("grok-4.1-fast") == "grok-4-1-fast-non-reasoning"
 
         # Test case insensitive resolution
         assert provider._resolve_model_name("Grok") == "grok-4-1-fast-non-reasoning"
-        assert provider._resolve_model_name("GROK-4.1-FAST-REASONING") == "grok-4-1-fast-non-reasoning"
+        assert provider._resolve_model_name("GROK-4.1-FAST") == "grok-4-1-fast-non-reasoning"
 
     def test_dial_provider_aliases(self):
         """Test DIAL provider's alias structure."""
@@ -131,7 +131,7 @@ class TestSupportedModelsAliases:
         gemini_models = gemini_provider.list_models(respect_restrictions=False)
         assert "gemini-2.5-flash" in gemini_models
         assert "flash" in gemini_models
-        assert "gemini-3-pro-preview" in gemini_models
+        assert "gemini-3.1-pro-preview" in gemini_models
         assert "pro" in gemini_models
 
         # Test OpenAI
@@ -148,7 +148,6 @@ class TestSupportedModelsAliases:
         assert "grok-4" in xai_models
         assert "grok" in xai_models
         assert "grok-4.1-fast" in xai_models
-        assert "grok-4.1-fast-reasoning" in xai_models
 
         # Test DIAL
         dial_provider = DIALModelProvider("test-key")
@@ -168,7 +167,7 @@ class TestSupportedModelsAliases:
         )
         assert "gemini-2.5-flash" in gemini_all
         assert "flash" in gemini_all
-        assert "gemini-3-pro-preview" in gemini_all
+        assert "gemini-3.1-pro-preview" in gemini_all
         assert "pro" in gemini_all
         # All should be lowercase
         assert all(model == model.lower() for model in gemini_all)

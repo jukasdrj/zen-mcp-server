@@ -54,10 +54,10 @@ python --version
 **Example:**
 ```python
 # Start complex
-chat with gemini-2.5-pro using files foo.py, bar.py about refactoring
+chat with gemini-3.1-pro-preview using files foo.py, bar.py about refactoring
 
 # Simplify to minimal
-chat with gemini-2.5-pro: "Hello"
+chat with gemini-3.1-pro-preview: "Hello"
 
 # If minimal works, add back complexity incrementally
 ```

@@ -81,23 +81,23 @@ class XAIModelsTest(BaseSimulatorTest):
 
             self.logger.info("  ✅ Direct GROK-4.1-fast model call completed")
 
-            # Test 3: grok-4.1-fast-reasoning alias
-            self.logger.info("  3: Testing 'grok-4.1-fast-reasoning' alias")
+            # Test 3: grok41 alias
+            self.logger.info("  3: Testing 'grok41' alias")
 
             response3, _ = self.call_mcp_tool(
                 "chat",
                 {
-                    "prompt": "Say 'Hello from GROK-4.1 Fast Reasoning alias!' and nothing else.",
-                    "model": "grok-4.1-fast-reasoning",
+                    "prompt": "Say 'Hello from GROK 4.1 alias!' and nothing else.",
+                    "model": "grok41",
                     "temperature": 0.1,
                 },
             )
 
             if not response3:
-                self.logger.error("  ❌ GROK-4.1-fast-reasoning alias test failed")
+                self.logger.error("  ❌ grok41 alias test failed")
                 return False
 
-            self.logger.info("  ✅ GROK-4.1-fast-reasoning alias call completed")
+            self.logger.info("  ✅ grok41 alias call completed")
 
             # Test 4: Conversation continuity with GROK models
             self.logger.info("  4: Testing conversation continuity with GROK")

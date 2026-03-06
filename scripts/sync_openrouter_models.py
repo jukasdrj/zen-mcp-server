@@ -132,6 +132,7 @@ def estimate_intelligence_score(api_model: dict) -> int:
         score += 4  # Qwen3 code specialist
     elif "glm" in model_id and ("glm-4.6" in model_id or "glm 4.6" in name):
         score += 4  # GLM 4.6 latest
+    # Legacy handling: grok-3 models are deprecated but may still appear in OpenRouter's API
     elif "grok-3" in model_id or "grok 3" in name:
         score += 2
     elif "qwen3" in model_id or "qwen3" in name:

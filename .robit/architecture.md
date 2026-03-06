@@ -166,7 +166,7 @@ Create two distinct tool base classes:
 
 With 7+ providers and 15+ tools, we need a way to:
 - Route model requests to correct provider
-- Support model aliases (e.g., "pro" → "gemini-2.5-pro")
+- Support model aliases (e.g., "pro" → "gemini-3.1-pro-preview")
 - Handle provider availability (missing API keys)
 - Enable/disable providers dynamically
 

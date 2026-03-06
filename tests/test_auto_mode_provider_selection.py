@@ -59,7 +59,7 @@ class TestAutoModeProviderSelection:
             balanced = ModelProviderRegistry.get_preferred_fallback_model(ToolModelCategory.BALANCED)
 
             # Should select appropriate Gemini models
-            assert extended_reasoning in ["gemini-3-pro-preview", "gemini-2.5-pro", "pro"]
+            assert extended_reasoning in ["gemini-3.1-pro-preview", "gemini-3-pro-preview", "gemini-2.5-pro", "pro"]
             assert fast_response in ["gemini-3-flash-preview", "gemini-2.5-flash", "flash", "flash3", "gemini3flash"]
             assert balanced in ["gemini-3-flash-preview", "gemini-2.5-flash", "flash", "flash3", "gemini3flash"]
 
@@ -139,7 +139,7 @@ class TestAutoModeProviderSelection:
             fast_response = ModelProviderRegistry.get_preferred_fallback_model(ToolModelCategory.FAST_RESPONSE)
 
             # Should prefer Gemini now (based on new provider priority: Gemini before OpenAI)
-            assert extended_reasoning == "gemini-3-pro-preview"  # Gemini 3 Pro Preview has higher priority now
+            assert extended_reasoning == "gemini-3.1-pro-preview"  # Gemini 3.1 Pro Preview has higher priority now
 
             # Should prefer Gemini for fast response (gemini3flash or gemini3-flash is the new fastest)
             assert fast_response in ["gemini3-flash", "gemini3flash"]  # Gemini 3 Flash Preview has higher priority now
@@ -317,11 +317,11 @@ class TestAutoModeProviderSelection:
             # Test that providers resolve aliases correctly
             test_cases = [
                 ("flash", ProviderType.GOOGLE, "gemini-2.5-flash"),
-                ("pro", ProviderType.GOOGLE, "gemini-3-pro-preview"),  # "pro" now resolves to gemini-3-pro-preview
+                ("pro", ProviderType.GOOGLE, "gemini-3.1-pro-preview"),  # "pro" now resolves to gemini-3.1-pro-preview
                 ("mini", ProviderType.OPENAI, "gpt-5-mini"),  # "mini" now resolves to gpt-5-mini
                 ("o3mini", ProviderType.OPENAI, "o3-mini"),
                 ("grok", ProviderType.XAI, "grok-4-1-fast-non-reasoning"),
-                ("grok-4.1-fast-reasoning", ProviderType.XAI, "grok-4-1-fast-non-reasoning"),
+                ("grok-4.1-fast", ProviderType.XAI, "grok-4-1-fast-non-reasoning"),
             ]
 
             for alias, expected_provider_type, expected_resolved_name in test_cases:

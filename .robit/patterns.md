@@ -513,7 +513,7 @@ def test_chat_tool_basic():
     tool = ChatTool()
     request = ChatRequest(
         prompt="Explain async/await in Python",
-        model="gemini-2.5-pro",
+        model="gemini-3.1-pro-preview",
         working_directory_absolute_path="/tmp"
     )
 
@@ -543,7 +543,7 @@ def test_cross_tool_continuation():
         "total_steps": 2,
         "next_step_required": True,
         "findings": "Starting analysis",
-        "model": "gemini-2.5-pro",
+        "model": "gemini-3.1-pro-preview",
         "relevant_files": ["/path/to/file.py"]
     }
     analyze_response = run_tool("analyze", analyze_request)
@@ -581,7 +581,7 @@ def test_chat_with_gemini():
     tool = ChatTool()
     request = ChatRequest(
         prompt="What is 2+2?",
-        model="gemini-2.5-pro",
+        model="gemini-3.1-pro-preview",
         working_directory_absolute_path="/tmp"
     )
 
