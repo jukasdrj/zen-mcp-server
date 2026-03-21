@@ -56,6 +56,34 @@
       "max_image_size_mb": 20.0
     },
     {
+      "model_name": "grok-4.20-experimental-beta-0304-non-reasoning",
+      "friendly_name": "X.AI (Grok 4.20 Experimental Beta Non-Reasoning)",
+      "aliases": [
+        "grok420",
+        "grok-420",
+        "grok-4.20",
+        "grok-4-20",
+        "grok-4.20-beta",
+        "grok-4.20-experimental",
+        "grok-4.20-experimental-beta-non-reasoning-latest",
+        "g420"
+      ],
+      "intelligence_score": 100,
+      "description": "Grok 4.20 Experimental Beta Non-Reasoning (2M context) - Latest experimental Grok model with function calling, structured outputs, and reasoning capabilities. $2.00/M input, $6.00/M output, $0.20/M cached input tokens.",
+      "context_window": 2000000,
+      "max_output_tokens": 2000000,
+      "max_thinking_tokens": 0,
+      "supports_extended_thinking": false,
+      "supports_system_prompts": true,
+      "supports_streaming": true,
+      "supports_function_calling": true,
+      "supports_json_mode": true,
+      "supports_images": true,
+      "supports_temperature": true,
+      "allow_code_generation": true,
+      "max_image_size_mb": 20.0
+    },
+    {
       "model_name": "grok-code-fast-1",
       "friendly_name": "X.AI (Grok Code Fast 1)",
       "aliases": [

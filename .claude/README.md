@@ -1,66 +1,29 @@
 # Claude Code Agent Setup (Zen MCP Server)
 
-**Synced from:** bookstrack-backend
-**Tech Stack:** TypeScript, Node.js, MCP Protocol
+## Available Skills
 
-## Available Agents
-
-### ✅ Universal Agents (Synced from Backend)
-- **project-manager** - Orchestration and delegation
-- **zen-mcp-master** - Deep analysis (14 Zen MCP tools)
-
-### 🚧 MCP-Specific Agent (TODO)
+- **project-manager** - Top-level orchestration and delegation
+- **zen-mcp-master** - Deep analysis via 14 Zen MCP tools (debug, codereview, secaudit, etc.)
 - **mcp-dev-agent** - MCP server development, testing, deployment
 
 ## Quick Start
 
 ```bash
 # For complex workflows
-/skill project-manager
+/project-manager
 
 # For analysis/review/debugging
-/skill zen-mcp-master
+/zen-mcp-master
 
-# For MCP development (after creating mcp-dev-agent)
-/skill mcp-dev-agent
+# For MCP development
+/mcp-dev-agent
 ```
 
-## Next Steps
+## Structure
 
-### 1. Create mcp-dev-agent (Required)
-
-Create `.claude/skills/mcp-dev-agent/skill.md` with MCP-specific capabilities:
-
-- TypeScript development patterns
-- MCP protocol testing
-- npm package management
-- Integration testing with Claude Desktop
-- Server deployment and monitoring
-
-### 2. Customize project-manager
-
-Edit `.claude/skills/project-manager/skill.md`:
-- Replace `cloudflare-agent` references with `mcp-dev-agent`
-- Update delegation patterns for MCP development workflows
-
-### 3. Add Hooks (Optional)
-
-**Pre-commit hook** (`.claude/hooks/pre-commit.sh`):
-- TypeScript type checking
-- ESLint validation
-- Test suite execution
-- MCP protocol validation
-
-**Post-tool-use hook** (`.claude/hooks/post-tool-use.sh`):
-- Suggest `mcp-dev-agent` when npm commands are used
-- Suggest `zen-mcp-master` for TypeScript file changes
-
-## Documentation
-
-- `ROBIT_OPTIMIZATION.md` - Complete agent architecture
-- `ROBIT_SHARING_FRAMEWORK.md` - How sharing works
-- Backend repo: https://github.com/jukasdrj/bookstrack-backend/.claude/
-
-## Future Updates
-
-Run `../bookstrack-backend/scripts/sync-robit-to-repos.sh` to sync updates from backend.
+- `skills/` - Skill definitions with frontmatter
+- `rules/` - Modular instruction files imported by CLAUDE.md
+- `hooks/` - Pre/post tool-use and prompt submission hooks
+- `plans/` - Planning documents
+- `settings.json` - Shared project permissions and hooks
+- `settings.local.json` - Local-only settings (plugins, etc.)

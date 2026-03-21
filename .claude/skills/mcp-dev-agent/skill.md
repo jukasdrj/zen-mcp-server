@@ -1,3 +1,9 @@
+---
+name: MCP Development Agent
+description: MCP server development, testing, and deployment. Use for developing MCP tools, testing integration, managing packages, debugging protocol issues, and deploying servers.
+user-invocable: true
+---
+
 # MCP Development Agent
 
 **Purpose:** Model Context Protocol server development, testing, and deployment

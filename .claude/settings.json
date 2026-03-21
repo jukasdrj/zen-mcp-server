@@ -1,7 +1,20 @@
 {
   "plansDirectory": ".claude/plans",
+  "includeGitInstructions": false,
   "permissions": {
-    "allow": [],
+    "allow": [
+      "Bash(./code_quality_checks.sh)",
+      "Bash(python -m pytest:*)",
+      "Bash(python communication_simulator_test.py:*)",
+      "Bash(./run_integration_tests.sh:*)",
+      "Bash(ruff:*)",
+      "Bash(black:*)",
+      "Bash(isort:*)",
+      "Bash(tail:*)",
+      "Bash(grep:*)",
+      "Bash(source venv/bin/activate)",
+      "Bash(source .pal_venv/bin/activate)"
+    ],
     "deny": []
   },
   "hooks": {
@@ -17,24 +30,6 @@
       },
       {
         "matcher": "Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "mcp__filesystem-with-morph__write_file",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/pre-tool-use.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "mcp__filesystem-with-morph__edit_file",
         "hooks": [
           {
             "type": "command",
@@ -64,24 +59,6 @@
       },
       {
         "matcher": "Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/post-tool-use.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "mcp__filesystem-with-morph__write_file",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/juju/dev_repos/zen-mcp-server/.claude/hooks/post-tool-use.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "mcp__filesystem-with-morph__edit_file",
         "hooks": [
           {
             "type": "command",

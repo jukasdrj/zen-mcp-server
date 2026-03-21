@@ -1,3 +1,9 @@
+---
+name: Project Manager
+description: Top-level orchestration agent for multi-agent coordination. Use for complex requests requiring multiple specialists, strategic planning, or when unsure which agent to invoke.
+user-invocable: true
+---
+
 # BooksTrack Project Manager
 
 **Purpose:** Top-level orchestration agent that delegates work to specialized agents (Cloudflare operations, Zen MCP tools) and coordinates complex multi-phase tasks.

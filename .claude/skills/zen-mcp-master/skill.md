@@ -1,3 +1,9 @@
+---
+name: Zen MCP Master Agent
+description: Expert orchestrator for Zen MCP tools - delegates to debug, codereview, secaudit, thinkdeep, etc. based on task requirements. Use for code analysis, security audits, debugging, refactoring, and test generation.
+user-invocable: true
+---
+
 # Zen MCP Master Agent
 
 **Purpose:** Expert orchestrator for Zen MCP tools - delegates to appropriate tools (debug, codereview, secaudit, thinkdeep, etc.) based on task requirements.
