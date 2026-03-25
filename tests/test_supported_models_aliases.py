@@ -20,22 +20,22 @@ class TestSupportedModelsAliases:
 
         # Test specific aliases
         assert "flash" in provider.MODEL_CAPABILITIES["gemini-2.5-flash"].aliases
-        assert "pro" in provider.MODEL_CAPABILITIES["gemini-3.1-pro-preview"].aliases
+        assert "pro" in provider.MODEL_CAPABILITIES["gemini-3.1-pro-preview-customtools"].aliases
         assert "flash3" in provider.MODEL_CAPABILITIES["gemini-3-flash-preview"].aliases
         assert "flash-3" in provider.MODEL_CAPABILITIES["gemini-3-flash-preview"].aliases
-        assert "flashlite" in provider.MODEL_CAPABILITIES["gemini-2.5-flash-lite"].aliases
-        assert "flash-lite" in provider.MODEL_CAPABILITIES["gemini-2.5-flash-lite"].aliases
+        assert "flashlite" in provider.MODEL_CAPABILITIES["gemini-3.1-flash-lite-preview"].aliases
+        assert "flash-lite" in provider.MODEL_CAPABILITIES["gemini-3.1-flash-lite-preview"].aliases
 
         # Test alias resolution
         assert provider._resolve_model_name("flash") == "gemini-2.5-flash"
-        assert provider._resolve_model_name("pro") == "gemini-3.1-pro-preview"
+        assert provider._resolve_model_name("pro") == "gemini-3.1-pro-preview-customtools"
         assert provider._resolve_model_name("flash3") == "gemini-3-flash-preview"
         assert provider._resolve_model_name("flash-3") == "gemini-3-flash-preview"
-        assert provider._resolve_model_name("flashlite") == "gemini-2.5-flash-lite"
+        assert provider._resolve_model_name("flashlite") == "gemini-3.1-flash-lite-preview"
 
         # Test case insensitive resolution
         assert provider._resolve_model_name("Flash") == "gemini-2.5-flash"
-        assert provider._resolve_model_name("PRO") == "gemini-3.1-pro-preview"
+        assert provider._resolve_model_name("PRO") == "gemini-3.1-pro-preview-customtools"
 
     def test_openai_provider_aliases(self):
         """Test OpenAI provider's alias structure."""

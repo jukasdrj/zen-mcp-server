@@ -26,14 +26,39 @@
   },
   "models": [
     {
-      "model_name": "gemini-3.1-pro-preview",
-      "friendly_name": "Gemini Pro 3.1 Preview",
+      "model_name": "gemini-3.1-pro-preview-customtools",
+      "friendly_name": "Gemini Pro 3.1 Preview Custom Tools",
       "aliases": [
         "pro",
         "gemini-pro",
         "gemini31pro",
         "3.1pro",
-        "gemini-3.1-pro"
+        "gemini-3.1-pro",
+        "gemini3pro",
+        "3pro",
+        "gemini-3-pro",
+        "customtools"
+      ],
+      "intelligence_score": 100,
+      "description": "Gemini 3.1 Pro optimized for custom tool usage. Best choice for agentic workflows with function calling. 1M context window, 64K output, thinking support.",
+      "context_window": 1048576,
+      "max_output_tokens": 65536,
+      "max_thinking_tokens": 32768,
+      "supports_extended_thinking": true,
+      "supports_system_prompts": true,
+      "supports_streaming": true,
+      "supports_function_calling": true,
+      "supports_json_mode": true,
+      "supports_images": true,
+      "supports_temperature": true,
+      "allow_code_generation": true,
+      "max_image_size_mb": 32.0
+    },
+    {
+      "model_name": "gemini-3.1-pro-preview",
+      "friendly_name": "Gemini Pro 3.1 Preview",
+      "aliases": [
+        "gemini-3.1-pro-preview-base"
       ],
       "intelligence_score": 100,
       "description": "Most advanced Gemini model with dynamic thinking, powerful agentic and vibe coding capabilities. 1M context window, 64K output. Released Feb 2026.",
@@ -54,9 +79,7 @@
       "model_name": "gemini-3-pro-preview",
       "friendly_name": "Gemini Pro 3.0 Preview",
       "aliases": [
-        "gemini3pro",
-        "3pro",
-        "gemini-3-pro"
+        "gemini-3-pro-preview-base"
       ],
       "intelligence_score": 95,
       "description": "Reasoning-first model optimized for complex agentic workflows and coding. Features adaptive thinking, 1M context window, and integrated grounding.",
@@ -146,12 +169,34 @@
       "max_image_size_mb": 32.0
     },
     {
-      "model_name": "gemini-2.5-flash-lite",
-      "friendly_name": "Gemini Flash Lite 2.5",
+      "model_name": "gemini-3.1-flash-lite-preview",
+      "friendly_name": "Gemini Flash Lite 3.1 Preview",
       "aliases": [
         "flashlite",
         "flash-lite",
         "lite"
+      ],
+      "intelligence_score": 55,
+      "description": "Lightweight 3.1-generation model with thinking support. Fast and cost-efficient for simple tasks. 1M context window, 64K output.",
+      "context_window": 1048576,
+      "max_output_tokens": 65536,
+      "max_thinking_tokens": 8192,
+      "supports_extended_thinking": true,
+      "supports_system_prompts": true,
+      "supports_streaming": true,
+      "supports_function_calling": true,
+      "supports_json_mode": true,
+      "supports_images": true,
+      "supports_temperature": true,
+      "allow_code_generation": false,
+      "max_image_size_mb": 20.0
+    },
+    {
+      "model_name": "gemini-2.5-flash-lite",
+      "friendly_name": "Gemini Flash Lite 2.5",
+      "aliases": [
+        "lite25",
+        "flash-lite-2.5"
       ],
       "intelligence_score": 50,
       "description": "Ultra-lightweight model optimized for speed and cost efficiency. Best for simple tasks requiring quick responses.",
